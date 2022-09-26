@@ -13,6 +13,7 @@ public class AssignmentLoader : MonoBehaviour
 
     public void Load(IAssignment assignment)
     {
-        assHolder.AddComponent<TextAssignmentBehaviour>();
+        TextAssignmentBehaviour obj = assHolder.AddComponent<TextAssignmentBehaviour>();
+        obj.Ctx = assignment;
     }
 }
