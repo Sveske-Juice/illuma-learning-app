@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this);
         }
-        IList<IAssignment> multAss = new List<IAssignment>() { new TextAssignment("test text assingment") };
+        IList<Assignment> multAss = new List<Assignment>() { new TextAssignment("test text assingment") };
         mult = assSetHolder.AddComponent<AssignmentSet>();
         mult.Init(multAss);
     }

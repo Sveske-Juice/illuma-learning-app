@@ -2,12 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TextAssignment : IAssignment
+public class TextAssignment : Assignment
 {
-    private string m_Name;
-    public string Name { get { return m_Name; } set { m_Name = value; } }
-    private TextAssignmentBehaviour m_Behaviour;
-
     public TextAssignment(string name)
     {
         Name = name;
