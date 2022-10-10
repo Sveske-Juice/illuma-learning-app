@@ -545,7 +545,8 @@ MonoBehaviour:
     m_AssignmentSets:
     - m_Name: plus med 10
       m_Assignments:
-      - m_Name: 
+      - m_Name: Assignment
+        m_AssignmentType: 0
         m_Question: Hvad er 5 + 10?
         m_CorrectAnswers:
         - 15
