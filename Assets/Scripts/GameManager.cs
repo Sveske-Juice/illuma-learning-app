@@ -4,4 +4,5 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public AssignmentCategory[] m_AssignmentCategories;
 }

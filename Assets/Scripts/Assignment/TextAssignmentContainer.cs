@@ -6,10 +6,10 @@ using UnityEngine;
 /// Data container for text assignments.
 /// </summary>
 [System.Serializable]
-public class TextAssignmentContainer
+public class TextAssignmentContainer : AssignmentContainerBase
 {
     /* Members. */
-    public string m_Question;
+     public string m_Question;
     public string[] m_CorrectAnswers;
 
     /* Getters/Setters. */
