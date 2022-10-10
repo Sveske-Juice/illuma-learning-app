@@ -1,0 +1,9 @@
+public enum GameState
+{
+    MENU,
+    OPTIONS,
+    ABOUT,
+    CATEGORY_SELECT,
+    ASSIGNMENT_SET_SELECT,
+    ASSIGNMENT_SELECT,
+}
