@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    static AssignmentSet mult;
     public GameObject assSetHolder;
     public GameObject assLoader;
     public GameObject assHolder;
@@ -13,17 +12,6 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        print("Starting gm");
-        if (Instance is null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(this);
-        }
-        IList<Assignment> multAss = new List<Assignment>() { new TextAssignment("test text assingment") };
-        mult = assSetHolder.AddComponent<AssignmentSet>();
-        mult.Init(multAss);
+
     }
 }
