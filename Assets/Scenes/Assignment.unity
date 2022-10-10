@@ -540,7 +540,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa3334ae6cbafe434be957fe4fade221, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AssignmentCategories: []
+  m_AssignmentCategories:
+  - m_DisplayCategory: 0
+    m_AssignmentSets:
+    - m_Name: plus med 10
+      m_Assignments:
+      - m_Name: 
+        m_Question: Hvad er 5 + 10?
+        m_CorrectAnswers:
+        - 15
 --- !u!4 &1596011632
 Transform:
   m_ObjectHideFlags: 0
