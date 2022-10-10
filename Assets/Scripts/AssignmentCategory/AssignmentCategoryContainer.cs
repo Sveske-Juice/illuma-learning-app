@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class AssignmentCategory
+public class AssignmentCategoryContainer
 {
     public EAssignmentCategory m_DisplayCategory;
     public AssignmentSet[] m_AssignmentSets;
