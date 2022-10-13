@@ -1,4 +1,4 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,6 +18,11 @@ public class GameManager : MonoBehaviour
     {
         m_Instance = value;
     }}
+
+    /// <summary>
+    /// Event that gets raised when the game state changes.
+    /// </summary>
+    public static event Action<GMBaseState> OnGameStateChange;
 
     /* Members. */
     [SerializeField] private AssignmentCategoryContainer[] m_AssignmentCategories;
@@ -47,6 +52,8 @@ public class GameManager : MonoBehaviour
         CurrentGameState?.Exit();
         CurrentGameState = newState;
         newState.Enter();
+
+        OnGameStateChange?.Invoke(newState);
     }
 
 }

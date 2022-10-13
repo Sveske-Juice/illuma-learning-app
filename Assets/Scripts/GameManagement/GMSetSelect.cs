@@ -22,4 +22,10 @@ public class GMSetSelect : GMBaseState
 
     /* Getters/Setters. */
 
+    public override void Enter()
+    {
+        base.Enter();
+
+        
+    }
 }
