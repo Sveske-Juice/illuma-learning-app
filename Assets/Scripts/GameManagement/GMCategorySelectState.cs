@@ -39,6 +39,13 @@ public class GMCategorySelectState : GMBaseState
 
         // Hide Category Select Menu
         HUDSystem.Instance.SetMenuActiveState(HUDSystem.Instance.CategorySelectMenu, false);
+
+        // Delete all the category buttons
+        int childrenCount = GameManager.Instance.CategoryContainer.transform.childCount;
+        for (int i = 0; i < childrenCount; i++)
+        {
+            GameObject.Destroy(GameManager.Instance.CategoryContainer.transform.GetChild(i).gameObject);
+        }
     }
 
     /// <summary>
@@ -48,5 +55,8 @@ public class GMCategorySelectState : GMBaseState
     private void OnCategoryBtnClick(EAssignmentCategory category)
     {
         Debug.Log($"Selected category {category}");
+
+        // Switch state to set select
+        GameManager.Instance.SwitchState(new GMSetSelect(category));
     }
 }
