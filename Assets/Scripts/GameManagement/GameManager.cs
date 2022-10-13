@@ -21,10 +21,14 @@ public class GameManager : MonoBehaviour
 
     /* Members. */
     [SerializeField] private AssignmentCategoryContainer[] m_AssignmentCategories;
-    
+    [SerializeField] private GameObject m_CategoryHolder;
+    [SerializeField] private GameObject m_CategoryContainer;
     private GMBaseState m_CurrentGameState;
 
     /* Getters/Setters. */
+    public AssignmentCategoryContainer[] AssignmentCategories { get { return m_AssignmentCategories; } private set { m_AssignmentCategories = value; } }
+    public GameObject CategoryHolder { get { return m_CategoryHolder; } private set { m_CategoryHolder = value; } }
+    public GameObject CategoryContainer { get { return m_CategoryContainer; } private set { m_CategoryContainer = value; } }
     public GMBaseState CurrentGameState { get { return m_CurrentGameState; } private set { m_CurrentGameState = value; } }
     private void Awake()
     {
