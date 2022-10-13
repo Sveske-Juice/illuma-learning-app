@@ -5,6 +5,10 @@ using UnityEngine;
 [System.Serializable]
 public class AssignmentCategoryContainer
 {
-    public EAssignmentCategory m_DisplayCategory;
-    public AssignmentSet[] m_AssignmentSets;
+    /* Members. */
+    private EAssignmentCategory m_DisplayCategory;
+    private AssignmentSet[] m_AssignmentSets;
+
+    /* Getters/Setters. */
+    public EAssignmentCategory DisplayCategory { get { return m_DisplayCategory; } private set { m_DisplayCategory = value; } }
 }
