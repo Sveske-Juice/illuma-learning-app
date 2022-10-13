@@ -8,7 +8,18 @@ public class GMCategorySelectState : GMBaseState
     {
         base.Enter();
 
+        // Instantiate Category Holder prefabs based on the categories specified in the gamemanager
+        
+
         // Show Category Select Menu
         HUDSystem.Instance.SetMenuActiveState(HUDSystem.Instance.CategorySelectMenu, true);
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+
+        // Hide Category Select Menu
+        HUDSystem.Instance.SetMenuActiveState(HUDSystem.Instance.CategorySelectMenu, false);
     }
 }

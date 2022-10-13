@@ -24,6 +24,11 @@ public class HUDSystem : MonoBehaviour
     /* Getters/Setters. */
     public GameObject CategorySelectMenu { get { return m_CategorySelectMenu; } private set { m_CategorySelectMenu = value; } }
 
+    private void Awake()
+    {
+        Instance = this;
+    }
+    
     /// <summary>
     /// Shows or hides a menu specified by 'menu'.
     /// </summary>
