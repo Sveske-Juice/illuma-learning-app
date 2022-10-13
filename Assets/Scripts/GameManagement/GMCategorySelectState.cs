@@ -34,10 +34,17 @@ public class GMCategorySelectState : GMBaseState
     {
         base.Exit();
 
+        // Unsubscribe to the event raised when clicked on a category button
+        CategoryButton.OnCategorySelect -= OnCategoryBtnClick;
+
         // Hide Category Select Menu
         HUDSystem.Instance.SetMenuActiveState(HUDSystem.Instance.CategorySelectMenu, false);
     }
 
+    /// <summary>
+    /// Gets called when the user presses a category button.
+    /// </summary>
+    /// <param name="category">The category that the user decided. </param>
     private void OnCategoryBtnClick(EAssignmentCategory category)
     {
         Debug.Log($"Selected category {category}");
