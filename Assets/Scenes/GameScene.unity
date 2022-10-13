@@ -653,7 +653,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 1
-  m_Spacing: 50
+  m_Spacing: 275
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -827,6 +827,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AssignmentCategories:
   - m_DisplayCategory: 0
+    m_AssignmentSets: []
+  - m_DisplayCategory: 1
+    m_AssignmentSets: []
+  - m_DisplayCategory: 2
+    m_AssignmentSets: []
+  - m_DisplayCategory: 3
     m_AssignmentSets: []
   m_CategoryHolder: {fileID: 8079522834014840382, guid: 918b440b5e830fe3580c675f16603f66, type: 3}
   m_CategoryContainer: {fileID: 1039503153}

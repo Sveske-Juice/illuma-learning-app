@@ -16,7 +16,7 @@ public class GMCategorySelectState : GMBaseState
         for (int i = 0; i < GameManager.Instance.AssignmentCategories.Length; i++)
         {
             // Create category button as child of the container in the scroll view
-            GameObject categoryBtn = GameObject.Instantiate( GameManager.Instance.CategoryHolder, GameManager.Instance.CategoryContainer.transform.position, 
+            GameObject categoryBtn = GameObject.Instantiate( GameManager.Instance.CategoryHolder, Vector3.zero, 
                                     Quaternion.identity, GameManager.Instance.CategoryContainer.transform);
 
             // Set the newly created button's category to display
