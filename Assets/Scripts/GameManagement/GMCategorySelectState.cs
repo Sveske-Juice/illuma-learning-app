@@ -9,5 +9,6 @@ public class GMCategorySelectState : GMBaseState
         base.Enter();
 
         // Show Category Select Menu
+        HUDSystem.Instance.SetMenuActiveState(HUDSystem.Instance.CategorySelectMenu, true);
     }
 }
