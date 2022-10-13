@@ -23,6 +23,9 @@ public class GMCategorySelectState : GMBaseState
             categoryBtn.GetComponentInChildren<CategoryButton>().DisplayCategory = GameManager.Instance.AssignmentCategories[i].DisplayCategory;
         }
 
+        // Subscribe to the event raised when clicked on a category button
+        CategoryButton.OnCategorySelect += OnCategoryBtnClick;
+
         // Show Category Select Menu
         HUDSystem.Instance.SetMenuActiveState(HUDSystem.Instance.CategorySelectMenu, true);
     }
@@ -33,5 +36,10 @@ public class GMCategorySelectState : GMBaseState
 
         // Hide Category Select Menu
         HUDSystem.Instance.SetMenuActiveState(HUDSystem.Instance.CategorySelectMenu, false);
+    }
+
+    private void OnCategoryBtnClick(EAssignmentCategory category)
+    {
+        Debug.Log($"Selected category {category}");
     }
 }

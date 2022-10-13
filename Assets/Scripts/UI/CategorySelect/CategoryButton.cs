@@ -24,4 +24,9 @@ public class CategoryButton : MonoBehaviour
     {
         GetComponentInChildren<TextMeshProUGUI>().text = txt;
     }
+
+    public void OnClick()
+    {
+        OnCategorySelect?.Invoke(DisplayCategory);        
+    }
 }
