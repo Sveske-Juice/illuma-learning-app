@@ -5,6 +5,7 @@ using UnityEngine;
 /// <summary>
 /// The abstract/base class for all assignment behaviours. It will be the super class
 /// for fx the TextAssignment Behaviour.
+/// </summary>
 public abstract class AssignmentBase : MonoBehaviour
 {
     protected AssignmentContainerBase m_Ctx;

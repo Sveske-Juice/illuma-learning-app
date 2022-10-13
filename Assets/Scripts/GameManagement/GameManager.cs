@@ -17,13 +17,32 @@ public class GameManager : MonoBehaviour
     private set
     {
         m_Instance = value;
-    }
-    }
+    }}
 
+    /* Members. */
     [SerializeField] private AssignmentCategoryContainer[] m_AssignmentCategories;
-    private GameState m_GameState = GameState.ASSIGNMENT_SET_SELECT;
+    
+    private GMBaseState m_CurrentGameState;
+
+    /* Getters/Setters. */
+    public GMBaseState CurrentGameState { get { return m_CurrentGameState; } private set { m_CurrentGameState = value; } }
     private void Awake()
     {
         Instance = this;
+        SwitchState(new GMCategorySelectState());
     }
+
+
+    private void Update()
+    {
+        CurrentGameState.Tick();
+    }
+
+    public void SwitchState(GMBaseState newState)
+    {
+        CurrentGameState?.Exit();
+        CurrentGameState = newState;
+        newState.Enter();
+    }
+
 }
