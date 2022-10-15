@@ -19,10 +19,16 @@ public class SetSelectDisplay : DisplayMenuBase
     private void Display()
     {
 
+
+        // Show set select menu
+        Menu.SetActive(true);
     }
 
     private void Hide()
     {
 
+
+        // Hide set select menu
+        Menu.SetActive(false);
     }
 }
