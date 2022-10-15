@@ -7,33 +7,9 @@ using UnityEngine;
 /// when its the correct state. It will handle creating the buttons,
 /// showing and hiding the menu. 
 /// </summary>
-public class CategoryMenuDisplay : MonoBehaviour
+public class CategoryMenuDisplay : DisplayMenuBase
 {
-    /* Members. */
-    [SerializeField] private GameObject m_CategoryMenu;
-
-    /* Getters/Setters. */
-
-
-    private void OnEnable()
-    {
-        // Subsribe to game state change event
-        GameManager.OnGameStateChange += OnGameStateChanged;
-    }
-
-    private void OnDisable()
-    {
-        // Unsubsribe to game state change event
-        GameManager.OnGameStateChange -= OnGameStateChanged;
-    }
-
-    /// <summary>
-    /// Gets called when the state changes. If the new state is
-    /// CategorySelect state it will show the category select menu, 
-    /// else delete previos category buttons and hide it.
-    /// </summary>
-    /// <param name="state">The new state the game is changin to. </param>
-    private void OnGameStateChanged(GMBaseState state)
+    protected override void OnGameStateChanged(GMBaseState state)
     {
         if (state is GMCategorySelectState)
         {
@@ -59,19 +35,19 @@ public class CategoryMenuDisplay : MonoBehaviour
         }
 
         // Show the menu
-        m_CategoryMenu.SetActive(true);
+        Menu.SetActive(true);
     }
 
     private void Hide()
     {
         // Delete all the category buttons
-        int childrenCount = GameManager.Instance.CategoryContainer.transform.childCount;
+        int childrenCount = Menu.transform.childCount;
         for (int i = 0; i < childrenCount; i++)
         {
             GameObject.Destroy(GameManager.Instance.CategoryContainer.transform.GetChild(i).gameObject);
         }
 
         // Hide the menu
-        m_CategoryMenu.SetActive(false);
+        Menu.SetActive(false);
     }
 }
