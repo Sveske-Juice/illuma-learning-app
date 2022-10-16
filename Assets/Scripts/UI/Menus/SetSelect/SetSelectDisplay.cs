@@ -30,12 +30,12 @@ public class SetSelectDisplay : DisplayMenuBase
         AssignmentCategoryContainer[] categories = GameManager.Instance.AssignmentCategories;
 
         // Find the index of the category to display
-        int categorySetIdx = FindCategoryIdx(categories, category);
-        if (categorySetIdx < 0)
+        int categoryIdx = FindCategoryIdx(categories, category);
+        if (categoryIdx < 0)
             return;
         
         // The assignment sets under that category.
-        AssignmentSet[] sets = categories[categorySetIdx].AssignmentSets;
+        AssignmentSet[] sets = categories[categoryIdx].AssignmentSets;
 
         // Create set holders based on the assignment sets
         for (int i = 0; i < sets.Length; i++)
@@ -45,8 +45,8 @@ public class SetSelectDisplay : DisplayMenuBase
                                     Quaternion.identity, m_SetContainer.transform);
             SetButton btnComp = setBtn.GetComponentInChildren<SetButton>();
             btnComp.SetIdx = i;
+            btnComp.CategoryIdx = categoryIdx;
             btnComp.SetBtnText(sets[i].Name);
-            Debug.Log($"Setting btn name to: {sets[i].Name}");
         }
 
         // Show set select menu
