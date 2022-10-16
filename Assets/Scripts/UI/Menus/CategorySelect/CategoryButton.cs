@@ -7,6 +7,9 @@ public class CategoryButton : MonoBehaviour
     /* Members. */
     private EAssignmentCategory m_DisplayCategory;
 
+    /// <summary>
+    /// Event that gets raised when user clicks on a category to train on.
+    /// </summary>
     public static event Action<EAssignmentCategory> OnCategorySelect;
 
     /* Getters/Setters. */

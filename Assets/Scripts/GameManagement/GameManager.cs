@@ -27,12 +27,14 @@ public class GameManager : MonoBehaviour
     /* Members. */
     [SerializeField] private AssignmentCategoryContainer[] m_AssignmentCategories;
     private GMBaseState m_CurrentGameState;
-    private EAssignmentCategory m_ChosenAssignmentCategory;
 
     /* Getters/Setters. */
+    /// <summary>
+    /// The assignment categories can for example be multiplication, addition etc.
+    /// They all consists of assignment sets.
+    /// </summary>
     public AssignmentCategoryContainer[] AssignmentCategories { get { return m_AssignmentCategories; } private set { m_AssignmentCategories = value; } }
     public GMBaseState CurrentGameState { get { return m_CurrentGameState; } private set { m_CurrentGameState = value; } }
-    public EAssignmentCategory ChosenAssignmentCategory { get { return m_ChosenAssignmentCategory; } set { m_ChosenAssignmentCategory = value; } }
 
     private void Awake()
     {
