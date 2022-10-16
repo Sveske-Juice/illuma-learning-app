@@ -1173,20 +1173,6 @@ MonoBehaviour:
       m_Assignments: []
   - m_DisplayCategory: 3
     m_AssignmentSets: []
-  - m_DisplayCategory: 3
-    m_AssignmentSets: []
-  - m_DisplayCategory: 3
-    m_AssignmentSets: []
-  - m_DisplayCategory: 3
-    m_AssignmentSets: []
-  - m_DisplayCategory: 3
-    m_AssignmentSets: []
-  - m_DisplayCategory: 3
-    m_AssignmentSets: []
-  - m_DisplayCategory: 3
-    m_AssignmentSets: []
-  - m_DisplayCategory: 3
-    m_AssignmentSets: []
 --- !u!4 &1596011632
 Transform:
   m_ObjectHideFlags: 0
