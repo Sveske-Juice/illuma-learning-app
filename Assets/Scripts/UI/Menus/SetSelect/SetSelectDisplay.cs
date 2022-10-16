@@ -18,7 +18,7 @@ public class SetSelectDisplay : DisplayMenuBase
 
     private void Display()
     {
-
+        Debug.Log($"Displaying sets of category: {GameManager.Instance.ChosenAssignmentCategory}");
 
         // Show set select menu
         Menu.SetActive(true);
@@ -26,7 +26,7 @@ public class SetSelectDisplay : DisplayMenuBase
 
     private void Hide()
     {
-
+        // TODO remove content
 
         // Hide set select menu
         Menu.SetActive(false);

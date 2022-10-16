@@ -15,6 +15,7 @@ public class GMSetSelect : GMBaseState
     public GMSetSelect(EAssignmentCategory category)
     {
         m_Category = category;
+        GameManager.Instance.ChosenAssignmentCategory = category;
     }
 
     /* Members. */
