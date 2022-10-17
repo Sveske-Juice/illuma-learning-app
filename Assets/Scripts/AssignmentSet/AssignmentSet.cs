@@ -5,6 +5,8 @@ public class AssignmentSet
 {
     /* Members, */
     [SerializeField] private string m_Name;
+    
+    // TODO make more generic for other types of assignments
     [SerializeField] private TextAssignmentContainer[] m_Assignments;
 
     /* Getters/Setters. */

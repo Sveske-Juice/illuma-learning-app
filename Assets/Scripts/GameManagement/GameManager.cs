@@ -38,16 +38,26 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        // Singleton: Set this instance to the only one
         Instance = this;
+
+        // Set the start state to category selection
         SwitchState(new GMCategorySelectState());
     }
 
 
     private void Update()
     {
+        // Each frame tick the current state
         CurrentGameState.Tick();
     }
 
+    /// <summary>
+    /// Switches the game to a new state.
+    /// It will first exit the current state (if its not null), 
+    /// and then enter the new state.
+    /// </summary>
+    /// <param name="newState">The new game state to switch to.</param>
     public void SwitchState(GMBaseState newState)
     {
         CurrentGameState?.Exit();

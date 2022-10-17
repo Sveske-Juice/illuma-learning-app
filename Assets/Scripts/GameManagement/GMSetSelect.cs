@@ -4,8 +4,8 @@ using UnityEngine;
 
 /// <summary>
 /// Game Manager Set Select State is active when
-/// the user needs to pick an assignment set to
-/// train on. </summary>
+/// the user needs to pick an assignment set to train. 
+/// </summary>
 public class GMSetSelect : GMBaseState
 {
     /// <summary>

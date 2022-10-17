@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Abstract class for every game state behaviour. Every game state
+///  behaviour will derive from this base class and do its logic.
+/// </summary>
 public abstract class GMBaseState
 {
     /// <summary>

@@ -4,7 +4,7 @@ using UnityEngine;
 
 /// <summary>
 /// Game Manager Category Select State is active when
-/// the user needs to pick a category to train on.
+/// the user needs to pick a category to train.
 /// </summary>
 public class GMCategorySelectState : GMBaseState
 {

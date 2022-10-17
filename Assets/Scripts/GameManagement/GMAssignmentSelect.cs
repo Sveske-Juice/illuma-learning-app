@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Game Manager Assignment Select State is active when
+/// the user needs to pick an assignment to train or 
+/// continue where they left off last time.
+/// </summary>
 public class GMAssignmentSelect : GMBaseState
 {
     public GMAssignmentSelect(AssignmentSet assignment)
