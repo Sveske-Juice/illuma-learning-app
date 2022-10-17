@@ -3073,7 +3073,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1301366899
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4079,7 +4079,11 @@ MonoBehaviour:
   - m_DisplayCategory: 2
     m_AssignmentSets:
     - m_Name: Multiplying by 0
-      m_Assignments: []
+      m_Assignments:
+      - m_Name: 
+        m_AssignmentType: 0
+        m_Question: 
+        m_CorrectAnswers: []
     - m_Name: Multiplying by 10
       m_Assignments: []
     - m_Name: Two digit multiplication
@@ -5406,13 +5410,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1975173768}
+  - component: {fileID: 1975173769}
   m_Layer: 5
   m_Name: AssignmentSelectContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1975173768
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5434,6 +5439,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -200}
   m_SizeDelta: {x: 1400, y: 2500}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1975173769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975173767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 539f8591911cec8d1935502fd6f94a57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &2026779739 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 474672630544553748, guid: 63ed9424346a7ad2d84188887560c982, type: 3}
