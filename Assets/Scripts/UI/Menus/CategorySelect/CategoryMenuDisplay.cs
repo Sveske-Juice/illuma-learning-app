@@ -23,7 +23,7 @@ public class CategoryMenuDisplay : DisplayMenuBase
         }
     }
 
-    private void Display()
+    protected override void Display()
     {
         // Instantiate Category Holder prefabs based on the categories specified in the gamemanager
         for (int i = 0; i < GameManager.Instance.AssignmentCategories.Length; i++)
@@ -36,11 +36,10 @@ public class CategoryMenuDisplay : DisplayMenuBase
             categoryBtn.GetComponentInChildren<CategoryButton>().DisplayCategory = GameManager.Instance.AssignmentCategories[i].DisplayCategory;
         }
 
-        // Show the menu
-        Menu.SetActive(true);
+        base.Display();
     }
 
-    private void Hide()
+    protected override void Hide()
     {
         // Delete all the category buttons
         int childrenCount = Menu.transform.childCount;
@@ -49,7 +48,6 @@ public class CategoryMenuDisplay : DisplayMenuBase
             GameObject.Destroy(m_CategoryContainer.transform.GetChild(i).gameObject);
         }
 
-        // Hide the menu
-        Menu.SetActive(false);
+        base.Hide();
     }
 }

@@ -26,7 +26,7 @@ public class SetSelectDisplay : DisplayMenuBase
 
     private void Display(EAssignmentCategory category)
     {
-        Debug.Log($"Displaying sets of category: {category}");
+        Debug.Log($"Displaying assignment sets of category: {category}");
         AssignmentCategoryContainer[] categories = GameManager.Instance.AssignmentCategories;
 
         // Find the index of the category to display
@@ -49,16 +49,14 @@ public class SetSelectDisplay : DisplayMenuBase
             btnComp.SetBtnText(sets[i].Name);
         }
 
-        // Show set select menu
-        Menu.SetActive(true);
+        base.Display();
     }
 
-    private void Hide()
+    protected override void Hide()
     {
         // TODO remove content
 
-        // Hide set select menu
-        Menu.SetActive(false);
+        base.Hide();
     }
 
     /// <summary>

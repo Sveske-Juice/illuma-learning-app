@@ -34,4 +34,22 @@ public abstract class DisplayMenuBase : MonoBehaviour
     /// </summary>
     /// <param name="state">The new state the game is changing to.</param>
     protected abstract void OnGameStateChanged(GMBaseState state);
+
+    /// <summary>
+    /// Sets the menu active so it can be seen in-game.
+    /// </summary>
+    protected virtual void Display()
+    {
+        // Show menu
+        Menu.SetActive(true);
+    }
+
+    /// <summary>
+    /// Sets the menu inactive so it can't be seen in-game.
+    /// </summary>
+    protected virtual void Hide()
+    {
+        // Hide menu
+        Menu.SetActive(false);
+    }
 }

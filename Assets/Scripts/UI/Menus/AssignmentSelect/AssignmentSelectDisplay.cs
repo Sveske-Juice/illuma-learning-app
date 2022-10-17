@@ -16,13 +16,13 @@ public class AssignmentSelectDisplay : DisplayMenuBase
         }
     }
 
-    private void Display()
+    protected override void Display()
     {
-        Menu.SetActive(true);
+        base.Display();
     }
 
-    private void Hide()
+    protected override void Hide()
     {
-        Menu.SetActive(false);
+        base.Hide();
     }
 }

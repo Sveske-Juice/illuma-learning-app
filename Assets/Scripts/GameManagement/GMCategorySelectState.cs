@@ -30,7 +30,7 @@ public class GMCategorySelectState : GMBaseState
     /// <param name="category">The category that the user decided. </param>
     private void OnCategoryBtnClick(EAssignmentCategory category)
     {
-        Debug.Log($"Selected category {category}");
+        Debug.Log($"Selected category: {category}");
 
         // Switch state to set select
         GameManager.Instance.SwitchState(new GMSetSelect(category));
