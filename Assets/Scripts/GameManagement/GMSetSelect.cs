@@ -49,5 +49,6 @@ public class GMSetSelect : GMBaseState
     {
         AssignmentSet set = GameManager.Instance.AssignmentCategories[categoryIdx].AssignmentSets[setIdx];
         Debug.Log($"Chose set: {set.Name}");
+        GameManager.Instance.SwitchState(new GMAssignmentSelect(set));
     }
 }
