@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public abstract class AssignmentContainerBase
 {
-    public string m_Name;
-    public EAssignmentType m_AssignmentType;
+    [SerializeField] protected string m_Name;
+
+    public string Name { get { return m_Name; } set { m_Name = value; } }
 }

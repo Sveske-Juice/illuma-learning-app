@@ -9,8 +9,8 @@ using UnityEngine;
 public class TextAssignmentContainer : AssignmentContainerBase
 {
     /* Members. */
-     public string m_Question;
-    public string[] m_CorrectAnswers;
+    [SerializeField] private string m_Question;
+    [SerializeField] private string[] m_CorrectAnswers;
 
     /* Getters/Setters. */
     public string Question { get { return m_Question; } set { m_Question  = value; } }

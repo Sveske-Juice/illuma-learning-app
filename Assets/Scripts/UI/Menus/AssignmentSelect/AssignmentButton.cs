@@ -2,22 +2,22 @@ using System;
 using UnityEngine;
 using TMPro;
 
-public class CategoryButton : MonoBehaviour
+public class AssignmentButton : MonoBehaviour
 {
     /* Members. */
-    private EAssignmentCategory m_DisplayCategory;
+    private int assignmentIdx;
 
     /// <summary>
-    /// Event that gets raised when user clicks on a category to train.
+    /// Event that gets raised when user clicks on an assignment to train.
     /// </summary>
-    public static event Action<EAssignmentCategory> OnCategorySelect;
+    public static event Action<int> OnAssignmentSelect;
 
     /* Getters/Setters. */
     /// <summary>
     /// The category to display on the button. Also serves as the button's
     /// way of raising an event with the specified category (DisplayCategory) on the click.
     /// </summary>
-    public EAssignmentCategory DisplayCategory { get { return m_DisplayCategory; } set { m_DisplayCategory = value; SetBtnText(value.ToString()); } }
+    public int AssignmentIdx { get { return assignmentIdx; } set { assignmentIdx = value; SetBtnText((value + 1).ToString()); } }
 
     /// <summary>
     /// Sets the buttons text value.
@@ -30,6 +30,6 @@ public class CategoryButton : MonoBehaviour
 
     public void OnClick()
     {
-        OnCategorySelect?.Invoke(DisplayCategory);        
+        OnAssignmentSelect?.Invoke(AssignmentIdx);        
     }
 }
