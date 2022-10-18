@@ -25,10 +25,11 @@ public class AssignmentSelectDisplay : DisplayMenuBase
     {
         for (int i = 0; i < assignments.Length; i++)
         {
+            assignments[i].AssignmentIdx = i;
             GameObject assignmentBtn = Instantiate(m_AssignmentHolder, Vector3.zero, Quaternion.identity, m_AssignmentContainer);
             
-            // Set display name of assignment button to idx number
-            assignmentBtn.GetComponentInChildren<AssignmentButton>().AssignmentIdx = i;
+            // Load the new button with the assignment data container (sets display text etc.)
+            assignmentBtn.GetComponentInChildren<AssignmentButton>().Load(assignments[i]);
         }
 
         base.Display();

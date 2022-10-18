@@ -864,15 +864,15 @@ Canvas:
   m_GameObject: {fileID: 677823872}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 462115583}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: -1
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -1300,7 +1300,7 @@ MonoBehaviour:
     m_AssignmentSets:
     - m_Name: Multiplying by 0
       m_Assignments:
-      - m_Name: hey
+      - m_Name: 
         m_Question: What is 5 * 0?
         m_CorrectAnswers: []
     - m_Name: Multiplying by 10

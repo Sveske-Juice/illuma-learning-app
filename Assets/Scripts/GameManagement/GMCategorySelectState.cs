@@ -25,14 +25,15 @@ public class GMCategorySelectState : GMBaseState
     }
 
     /// <summary>
-    /// Gets called when the user presses a category button.
+    /// Gets called when a category button is clicked.
     /// </summary>
-    /// <param name="category">The category that the user decided. </param>
-    private void OnCategoryBtnClick(EAssignmentCategory category)
+    /// <param name="categoryContainer">The category data container corresponding to the clicked button. </param>
+    private void OnCategoryBtnClick(AssignmentCategoryContainer categoryContainer)
     {
-        Debug.Log($"Selected category: {category}");
+        string displayText = categoryContainer.DisplayCategory.ToString();
+        Debug.Log($"Selected category: {displayText}");
 
         // Switch state to set select
-        GameManager.Instance.SwitchState(new GMSetSelect(category));
+        GameManager.Instance.SwitchState(new GMSetSelect(categoryContainer.DisplayCategory));
     }
 }

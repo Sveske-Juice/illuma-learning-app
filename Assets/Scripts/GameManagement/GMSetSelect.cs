@@ -45,9 +45,8 @@ public class GMSetSelect : GMBaseState
     /// in that state.
     /// </summary>
     /// <param name="setIdx">The index in the assignment set array the user clicks on. </param>
-    private void OnSetSelection(int categoryIdx, int setIdx)
+    private void OnSetSelection(AssignmentSetContainer set)
     {
-        AssignmentSet set = GameManager.Instance.AssignmentCategories[categoryIdx].AssignmentSets[setIdx];
         Debug.Log($"Chose set: {set.Name}");
         GameManager.Instance.SwitchState(new GMAssignmentSelect(set));
     }

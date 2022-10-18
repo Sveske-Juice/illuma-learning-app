@@ -9,7 +9,7 @@ using UnityEngine;
 /// </summary>
 public class GMAssignmentSelect : GMBaseState
 {
-    public GMAssignmentSelect(AssignmentSet assignment)
+    public GMAssignmentSelect(AssignmentSetContainer assignment)
     {
         m_AssignmentSet = assignment;
     }
@@ -31,15 +31,16 @@ public class GMAssignmentSelect : GMBaseState
     }
 
     /* Members. */
-    private AssignmentSet m_AssignmentSet;
+    private AssignmentSetContainer m_AssignmentSet;
 
     /* Getters/Setters. */
     // TODO make generic type of assignment
     public TextAssignmentContainer[] Assignments { get { return m_AssignmentSet.Assignments; } }
 
-    private void OnAssignmentSelect(int assignmentIdx)
+    private void OnAssignmentSelect(AssignmentContainerBase associatedAssignment)
     {
-        TextAssignmentContainer assignment = Assignments[assignmentIdx];
+        // TODO make generic
+        TextAssignmentContainer assignment = associatedAssignment as TextAssignmentContainer;
         Debug.Log($"Chose to train: {assignment.Question}");
     }
 }

@@ -28,12 +28,14 @@ public class CategoryMenuDisplay : DisplayMenuBase
         // Instantiate Category Holder prefabs based on the categories specified in the gamemanager
         for (int i = 0; i < GameManager.Instance.AssignmentCategories.Length; i++)
         {
+            AssignmentCategoryContainer categoryContainer = GameManager.Instance.AssignmentCategories[i];
+
             // Create category button as child of the container in the scroll view
             GameObject categoryBtn = GameObject.Instantiate( m_CategoryHolder, Vector3.zero, 
                                     Quaternion.identity, m_CategoryContainer.transform);
 
-            // Set the newly created button's category to display
-            categoryBtn.GetComponentInChildren<CategoryButton>().DisplayCategory = GameManager.Instance.AssignmentCategories[i].DisplayCategory;
+            // Load the new button with the category data container (sets display text etc.)
+            categoryBtn.GetComponentInChildren<CategoryButton>().Load(categoryContainer);
         }
 
         base.Display();

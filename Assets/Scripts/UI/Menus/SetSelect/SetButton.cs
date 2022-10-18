@@ -1,25 +1,38 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class SetButton : MonoBehaviour
+public class SetButton : ContainerLoader
 {
     /* Members. */
-    private int m_SetIdx;
-    private int m_CategoryIdx;
+    private AssignmentSetContainer m_AssociatedSet;
 
     /// <summary>
     /// Event that gets raised when user clicks on a assignment set to train on.
     /// </summary>
-    public static event Action<int, int> OnSetSelect;
+    public static event Action<AssignmentSetContainer> OnSetSelect;
 
     /* Getters/Setters. */
     /// <summary>
-    /// The index in the assignment set array this set button corresponds to.
+    /// The assignments set data container this button corresponds to.
     /// </summary>
-    public int SetIdx { get { return m_SetIdx; } set { m_SetIdx = value; } }
-    public int CategoryIdx { get { return m_CategoryIdx; } set { m_CategoryIdx = value; } }
+    public AssignmentSetContainer AssociatedSet { get { return m_AssociatedSet; } set { m_AssociatedSet = value; } }
+
+    /// <summary>
+    /// Loads an assignment set data container into the UI element.
+    /// It will set the display text aswell as setting up events
+    /// for when the button is pressed.
+    /// </summary>
+    /// <param name="setContainer">The assignment set data container to load.</param>
+    public void Load(AssignmentSetContainer setContainer)
+    {
+        AssociatedSet = setContainer;
+
+        // Sets the display text of the button to the name of the set container
+        SetBtnText(setContainer.Name);
+
+        base.Load(setContainer.Name);
+    }
 
     /// <summary>
     /// Sets the buttons text value.
@@ -30,8 +43,13 @@ public class SetButton : MonoBehaviour
         GetComponentInChildren<TextMeshProUGUI>().text = txt;
     }
 
+    /// <summary>
+    /// Gets called when clicked on the button. 
+    /// It will raise an event passing the associated
+    /// assignment set this button corresponds to.
+    /// </summary>
     public void OnClick()
     {
-        OnSetSelect?.Invoke(CategoryIdx, SetIdx);        
+        OnSetSelect?.Invoke(AssociatedSet);        
     }
 }

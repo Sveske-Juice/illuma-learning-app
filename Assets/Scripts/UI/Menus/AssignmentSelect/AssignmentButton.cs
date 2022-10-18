@@ -2,22 +2,45 @@ using System;
 using UnityEngine;
 using TMPro;
 
-public class AssignmentButton : MonoBehaviour
+public class AssignmentButton : ContainerLoader
 {
     /* Members. */
-    private int assignmentIdx;
+    private AssignmentContainerBase m_AssociatedAssignment;
 
     /// <summary>
     /// Event that gets raised when user clicks on an assignment to train.
     /// </summary>
-    public static event Action<int> OnAssignmentSelect;
+    public static event Action<AssignmentContainerBase> OnAssignmentSelect;
 
     /* Getters/Setters. */
     /// <summary>
-    /// The category to display on the button. Also serves as the button's
-    /// way of raising an event with the specified category (DisplayCategory) on the click.
+    /// The assignment data container this button corresponds to.
     /// </summary>
-    public int AssignmentIdx { get { return assignmentIdx; } set { assignmentIdx = value; SetBtnText((value + 1).ToString()); } }
+    public AssignmentContainerBase AssociatedAssignment { get { return m_AssociatedAssignment; } set { m_AssociatedAssignment = value; } }
+
+    /// <summary>
+    /// Loads an assignment data container into the UI element.
+    /// It will set the display text aswell as setting up events
+    /// for when the button is pressed.
+    /// </summary>
+    /// <param name="assignment">The assignment data container to load.</param>
+    public void Load(AssignmentContainerBase assignment)
+    {
+        AssociatedAssignment = assignment;
+
+        // If the assignment has a name show it, otherwise show its index
+        if (assignment.Name.Length > 0)
+        {
+            SetBtnText(assignment.Name);
+        }
+        else
+        {
+            // Set button text with an offset of 1 to avoid zero-indexing
+            SetBtnText((assignment.AssignmentIdx + 1).ToString());
+        }
+
+        base.Load(assignment.Name);
+    }
 
     /// <summary>
     /// Sets the buttons text value.
@@ -28,8 +51,13 @@ public class AssignmentButton : MonoBehaviour
         GetComponentInChildren<TextMeshProUGUI>().text = txt;
     }
 
+    /// <summary>
+    /// Gets called when clicked on the button. 
+    /// It will raise an event passing the associated
+    /// assignment this button corresponds to.
+    /// </summary>
     public void OnClick()
     {
-        OnAssignmentSelect?.Invoke(AssignmentIdx);        
+        OnAssignmentSelect?.Invoke(AssociatedAssignment);        
     }
 }

@@ -35,18 +35,21 @@ public class SetSelectDisplay : DisplayMenuBase
             return;
         
         // The assignment sets under that category.
-        AssignmentSet[] sets = categories[categoryIdx].AssignmentSets;
+        AssignmentSetContainer[] sets = categories[categoryIdx].AssignmentSets;
 
         // Create set holders based on the assignment sets
         for (int i = 0; i < sets.Length; i++)
         {
+            AssignmentSetContainer set = sets[i];
+            set.CategoryIdx = categoryIdx;
+            set.SetIdx = i;
+
             // Create set button as child of the container in the scroll view
             GameObject setBtn = GameObject.Instantiate( m_SetHolder, Vector3.zero, 
                                     Quaternion.identity, m_SetContainer.transform);
-            SetButton btnComp = setBtn.GetComponentInChildren<SetButton>();
-            btnComp.SetIdx = i;
-            btnComp.CategoryIdx = categoryIdx;
-            btnComp.SetBtnText(sets[i].Name);
+
+            // Load the new button with the assignment set data container (sets display text etc.)
+            setBtn.GetComponentInChildren<SetButton>().Load(set);
         }
 
         base.Display();
