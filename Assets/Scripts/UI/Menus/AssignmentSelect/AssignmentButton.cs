@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using TMPro;
 
-public class AssignmentButton : ContainerLoader
+public class AssignmentButton : ContainerLoader, IButton
 {
     /* Members. */
     private AssignmentContainerBase m_AssociatedAssignment;

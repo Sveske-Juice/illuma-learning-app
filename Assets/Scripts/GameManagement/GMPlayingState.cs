@@ -30,7 +30,7 @@ public class GMPlayingState : GMBaseState
         if (m_AssignmentBehaviour == null)
         {
             // WTF happened??
-            Debug.LogError("Could not create assignment behaviour, maybe because no one was subscribed to the create assignment event");
+            Debug.LogError("Could not create assignment behaviour, maybe because no one was subscribed to the create assignment event (assignment factory)");
             return;
         }
 

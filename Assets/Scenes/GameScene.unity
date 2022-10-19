@@ -1354,7 +1354,9 @@ MonoBehaviour:
       m_Assignments:
       - m_Name: 
         m_Question: What is 5 * 0?
-        m_CorrectAnswers: []
+        m_CorrectAnswers:
+        - 0
+        - hey
     - m_Name: Multiplying by 10
       m_Assignments: []
     - m_Name: Two digit multiplication

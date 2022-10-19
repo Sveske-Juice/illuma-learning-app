@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 /// <summary>
@@ -8,6 +7,10 @@ using UnityEngine;
 /// </summary>
 public abstract class AssignmentBase<TContainerContext> : MonoBehaviour, IAssignment where TContainerContext : AssignmentContainerBase
 {
+    /* Members. */
+    public static event Action OnIncorrectAnswer;
+    public static event Action OnCorrectAnswer;
+
     protected TContainerContext m_Ctx;
 
     /// <summary>
@@ -33,7 +36,7 @@ public abstract class AssignmentBase<TContainerContext> : MonoBehaviour, IAssign
     /// </summary>
     public virtual void Play()
     {
-        Debug.Log($"Starting play of assignment index: {m_Ctx.AssignmentIdx}");
+        Debug.Log($"Starting play of assignment with index: {m_Ctx.AssignmentIdx}");
     }
 }
 

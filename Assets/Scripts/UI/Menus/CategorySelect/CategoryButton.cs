@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using TMPro;
 
-public class CategoryButton : ContainerLoader
+public class CategoryButton : ContainerLoader, IButton
 {
     /* Members. */
     private AssignmentCategoryContainer m_AssociatedCategory;

@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using TMPro;
 
-public class SetButton : ContainerLoader
+public class SetButton : ContainerLoader, IButton
 {
     /* Members. */
     private AssignmentSetContainer m_AssociatedSet;
