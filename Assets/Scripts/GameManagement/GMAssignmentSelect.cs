@@ -41,6 +41,8 @@ public class GMAssignmentSelect : GMBaseState
     {
         // TODO make generic
         TextAssignmentContainer assignment = associatedAssignment as TextAssignmentContainer;
-        Debug.Log($"Chose to train: {assignment.Question}");
+        Debug.Log($"Chose to train on question: {assignment.Question}");
+
+        GameManager.Instance.SwitchState(new GMPlayingState(associatedAssignment));
     }
 }

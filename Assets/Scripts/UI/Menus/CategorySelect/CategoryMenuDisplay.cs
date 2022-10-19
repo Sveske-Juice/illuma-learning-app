@@ -44,7 +44,7 @@ public class CategoryMenuDisplay : DisplayMenuBase
     protected override void Hide()
     {
         // Delete all the category buttons
-        int childrenCount = Menu.transform.childCount;
+        int childrenCount = m_CategoryContainer.transform.childCount;
         for (int i = 0; i < childrenCount; i++)
         {
             GameObject.Destroy(m_CategoryContainer.transform.GetChild(i).gameObject);
