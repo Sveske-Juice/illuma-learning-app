@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
+[CreateAssetMenu(fileName = "New Assignment Set", menuName = "Assignment Set")]
 public class SetObject : ScriptableObject
 {
     /* Members. */

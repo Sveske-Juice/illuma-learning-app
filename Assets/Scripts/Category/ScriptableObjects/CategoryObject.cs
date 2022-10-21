@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Category", menuName = "Category")]
-[System.Serializable]
 public class CategoryObject : ScriptableObject
 {
     /* Members. */

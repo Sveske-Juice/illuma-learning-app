@@ -14,4 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SubjectName: Math
   m_Categories:
+  - {fileID: 11400000, guid: 169082e2e8f3a7b6e828bfa6910cc0ec, type: 2}
+  - {fileID: 11400000, guid: b08680b8a8af899e4abdf018964930fa, type: 2}
   - {fileID: 11400000, guid: 632da5b6b02788b75ac17099d06bd293, type: 2}
+  - {fileID: 11400000, guid: 06aab017110f9f39a84956281f8356c5, type: 2}

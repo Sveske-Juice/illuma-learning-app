@@ -9,12 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a654dd7ec945c96aeb94baba1855283b, type: 3}
-  m_Name: Multiplication
+  m_Script: {fileID: 11500000, guid: ce52d882750ea3d98acfd5ebe17dc51f, type: 3}
+  m_Name: Multiplying_by_0
   m_EditorClassIdentifier: 
-  m_CategoryName: Multiplication
-  m_Sets:
-  - {fileID: 11400000, guid: a70172eb83df3e0adadf07da906b9fb1, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  m_SetName: Multiplying by 0
+  m_Assignments:
+  - {fileID: 11400000, guid: f7a3e455cec7c538ca2e6c3de65c9717, type: 2}
+  - {fileID: 11400000, guid: 7e9ccc7cf3f5c91e18c6a40aa7a40287, type: 2}
