@@ -10,4 +10,9 @@ public class MultipleChoiceObject : QuestionBaseObject
 
     /* Getters/Setters. */
     public string[] Choices => m_Choices;
+
+    public override IPlayable CreateAssignment(Transform assignmentParent)
+    {
+        throw new System.NotImplementedException();
+    }
 }

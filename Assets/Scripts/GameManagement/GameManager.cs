@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     private GMBaseState m_CurrentGameState;
     private ISubjectHolder m_SubjectHolder;
     [SerializeField] private AssignmentFactory m_AssignmentFactory;
+    [SerializeField] private Transform m_AssignmentParent;
 
     /* Getters/Setters. */
     public GMBaseState CurrentGameState => m_CurrentGameState;
@@ -36,6 +37,7 @@ public class GameManager : MonoBehaviour
 
     // TODO support for more subjects (dont use Subjects[0]), fine for now tho
     public CategoryObject[] AssignmentCategories => m_SubjectHolder.Subjects[0].Categories;
+    public Transform AssignmentParent => m_AssignmentParent;
 
     private void Awake()
     {

@@ -23,13 +23,12 @@ public class GMPlayingState : GMBaseState
     {
         base.Enter();
 
-        
+        m_AssignmentBehaviour = m_AssignmentContainer.CreateAssignment(GameManager.Instance.AssignmentParent);
+        /*
         if (m_AssignmentContainer is TextInputObject)
         {
             m_AssignmentBehaviour = GameManager.Instance.AssignmentFactory.CreateAssignment<TextInputBehaviour, TextInputObject>(m_AssignmentContainer);
-        }
-        
-        Debug.Log(m_AssignmentContainer);
+        }*/
 
         // If no one created a valid behaviour
         if (m_AssignmentBehaviour == null)
@@ -39,6 +38,7 @@ public class GMPlayingState : GMBaseState
             return;
         }
 
+        Debug.Log($"Playing assignment named: {m_AssignmentContainer.Name}");
         // Play the assignment
         m_AssignmentBehaviour.Play();
     }

@@ -951,7 +951,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AssignmentContainer: {fileID: 839848348}
-  m_TextAssignmentHolder: {fileID: 3690883752155463467, guid: 639f66af68f5bbd3bb5919decc334045, type: 3}
+  m_AssignmentHolder: {fileID: 0}
 --- !u!1 &1039503153
 GameObject:
   m_ObjectHideFlags: 0
@@ -1340,6 +1340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AssignmentFactory: {fileID: 839848349}
+  m_AssignmentParent: {fileID: 839848348}
 --- !u!114 &1596011634
 MonoBehaviour:
   m_ObjectHideFlags: 0

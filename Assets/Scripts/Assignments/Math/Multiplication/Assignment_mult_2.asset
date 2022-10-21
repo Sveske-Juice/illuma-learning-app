@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 844497e43b4e948d28c15f0a9b09ad1f, type: 3}
   m_Name: Assignment_mult_2
   m_EditorClassIdentifier: 
-  m_AssignmentName: 3t0
+  m_AssignmentName: 
   m_Question: What is 3* 0?
   m_CorrectAnswers:
   - 0
+  m_AssignmentHolderPrefab: {fileID: 3690883752155463467, guid: 639f66af68f5bbd3bb5919decc334045, type: 3}
