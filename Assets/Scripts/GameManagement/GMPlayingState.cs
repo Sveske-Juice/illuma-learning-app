@@ -6,9 +6,9 @@ public class GMPlayingState : GMBaseState
 {
     /* Memebers. */
     private AssignmentBaseObject m_AssignmentContainer;
-    private IAssignment m_AssignmentBehaviour;
+    private IPlayable m_AssignmentBehaviour;
 
-    public static event Func<AssignmentBaseObject, IAssignment> CreateAssignment;
+    //public static event Func<AssignmentBaseObject, AssignmentBaseBehaviour> CreateAssignment;
 
     /// <summary>
     /// Constructor of the playing assignment game state.
@@ -23,8 +23,13 @@ public class GMPlayingState : GMBaseState
     {
         base.Enter();
 
-        // Raise event that someone should create the assignment behaviour
-        m_AssignmentBehaviour = CreateAssignment?.Invoke(m_AssignmentContainer);
+        
+        if (m_AssignmentContainer is TextInputObject)
+        {
+            m_AssignmentBehaviour = GameManager.Instance.AssignmentFactory.CreateAssignment<TextInputBehaviour, TextInputObject>(m_AssignmentContainer);
+        }
+        
+        Debug.Log(m_AssignmentContainer);
 
         // If no one created a valid behaviour
         if (m_AssignmentBehaviour == null)

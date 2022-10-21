@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 844497e43b4e948d28c15f0a9b09ad1f, type: 3}
   m_Name: Assignment_mult_1
   m_EditorClassIdentifier: 
-  m_AssignmentName: 
+  m_AssignmentName: 7t0
   m_Question: What is 7 * 0?
   m_CorrectAnswers:
   - 0

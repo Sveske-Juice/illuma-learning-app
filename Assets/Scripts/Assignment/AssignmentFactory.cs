@@ -5,30 +5,15 @@ using UnityEngine;
 public class AssignmentFactory : MonoBehaviour
 {
     [SerializeField] private Transform m_AssignmentContainer;
-
     [SerializeField] private GameObject m_TextAssignmentHolder;
-    private void OnEnable()
-    {
-        GMPlayingState.CreateAssignment += CreateAssignment;
-    }
 
-    private void OnDisable()
+    public IPlayable CreateAssignment<BehaviourType, ContainerType>(AssignmentBaseObject container) 
+        where BehaviourType : AssignmentBaseBehaviour<ContainerType> where ContainerType : AssignmentBaseObject
     {
-        GMPlayingState.CreateAssignment -= CreateAssignment;
-    }
-
-    private IAssignment CreateAssignment(AssignmentBaseObject container)
-    {
-        // TODO make generic
-        TextInputObject textAssignment = container as TextInputObject;
-        if (textAssignment != null)
-        {
-            TextAssignmentBehaviour behaviour = Instantiate(    m_TextAssignmentHolder, Vector3.zero, 
-                                                                Quaternion.identity, m_AssignmentContainer)
-                                                                .GetComponent<TextAssignmentBehaviour>();
-            behaviour.Load(textAssignment);
-            return behaviour;                                                      
-        }
-        return null;
+        BehaviourType behaviour = Instantiate(  m_TextAssignmentHolder, Vector3.zero, 
+                                                Quaternion.identity, m_AssignmentContainer)
+                                                .GetComponent<BehaviourType>();
+        behaviour.Load(container as ContainerType);
+        return behaviour;
     }
 }

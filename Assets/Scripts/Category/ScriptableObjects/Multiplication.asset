@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Multiplication
   m_EditorClassIdentifier: 
   m_CategoryName: Multiplication
+  m_Category: 2
   m_Sets:
   - {fileID: 11400000, guid: a70172eb83df3e0adadf07da906b9fb1, type: 2}
   - {fileID: 0}

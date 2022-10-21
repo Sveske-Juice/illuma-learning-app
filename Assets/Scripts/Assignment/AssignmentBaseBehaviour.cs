@@ -5,25 +5,25 @@ using UnityEngine;
 /// The abstract/base class for all assignment behaviours. It will be the super class
 /// for fx the TextAssignment Behaviour.
 /// </summary>
-public abstract class AssignmentBase<TContainerContext> : MonoBehaviour, IAssignment where TContainerContext : AssignmentBaseObject
+public abstract class AssignmentBaseBehaviour<ContainerType> : MonoBehaviour, IPlayable where ContainerType : AssignmentBaseObject
 {
     /* Members. */
     public static event Action OnIncorrectAnswer;
     public static event Action OnCorrectAnswer;
 
-    protected TContainerContext m_Ctx;
+    protected ContainerType m_Ctx;
 
     /// <summary>
     /// Sets the context so the behaviour implementation 
     /// has access to the data container.
     /// </summary>
     /// <param name="ctx">The context to set to the this behaviour instance. </param>
-    protected virtual void SetContext(TContainerContext ctx)
+    protected virtual void SetContext(ContainerType ctx)
     {
         m_Ctx = ctx;
     }
 
-    public virtual void Load(TContainerContext container)
+    public virtual void Load(ContainerType container)
     {
         // Set the context so the this behaviour has access to the data container
         SetContext(container);
@@ -41,4 +41,4 @@ public abstract class AssignmentBase<TContainerContext> : MonoBehaviour, IAssign
 }
 
 // Default type
-public abstract class AssignmentBase : AssignmentBase<AssignmentBaseObject> { }
+public abstract class AssignmentBaseBehaviour : AssignmentBaseBehaviour<AssignmentBaseObject> { }

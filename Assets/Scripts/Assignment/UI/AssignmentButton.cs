@@ -14,7 +14,7 @@ public class AssignmentButton : ContainerLoader, IButton
 
     /* Getters/Setters. */
     /// <summary>
-    /// The assignment data container this button corresponds to.
+    /// The assignment SO this button corresponds to.
     /// </summary>
     public AssignmentBaseObject AssociatedAssignment { get { return m_AssociatedAssignment; } set { m_AssociatedAssignment = value; } }
 
@@ -58,6 +58,7 @@ public class AssignmentButton : ContainerLoader, IButton
     /// </summary>
     public void OnClick()
     {
-        OnAssignmentSelect?.Invoke(AssociatedAssignment);        
+        Debug.Log($"Clicked on button with associated ass: {AssociatedAssignment}\nAssignment index: {AssociatedAssignment.AssignmentIdx}\nName: {AssociatedAssignment.Name}");
+        OnAssignmentSelect?.Invoke(AssociatedAssignment);
     }
 }

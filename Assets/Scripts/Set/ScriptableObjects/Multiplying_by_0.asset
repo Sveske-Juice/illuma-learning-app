@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SetName: Multiplying by 0
   m_Assignments:
-  - {fileID: 11400000, guid: f7a3e455cec7c538ca2e6c3de65c9717, type: 2}
   - {fileID: 11400000, guid: 7e9ccc7cf3f5c91e18c6a40aa7a40287, type: 2}
+  - {fileID: 11400000, guid: f7a3e455cec7c538ca2e6c3de65c9717, type: 2}
+  - {fileID: 11400000, guid: 2d2d0ccaad579a8469585c516aa27899, type: 2}

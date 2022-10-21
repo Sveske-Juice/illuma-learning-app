@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Subtraction
   m_EditorClassIdentifier: 
   m_CategoryName: Subtraction
+  m_Category: 1
   m_Sets: []

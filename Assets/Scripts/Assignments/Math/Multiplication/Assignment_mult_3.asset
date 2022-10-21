@@ -9,10 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 844497e43b4e948d28c15f0a9b09ad1f, type: 3}
-  m_Name: Assignment_mult_2
+  m_Script: {fileID: 11500000, guid: e4551b54a1d86f2f4a284a2e04ba9702, type: 3}
+  m_Name: Assignment_mult_3
   m_EditorClassIdentifier: 
-  m_AssignmentName: 3t0
-  m_Question: What is 3* 0?
+  m_AssignmentName: multiple_coice_0_times_3
+  m_Question: What is 0 * 3?
   m_CorrectAnswers:
   - 0
+  m_Choices:
+  - 0
+  - 3
+  - 30
+  - 0.3
+  - -0.3

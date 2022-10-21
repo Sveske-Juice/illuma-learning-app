@@ -91,6 +91,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3365820142840378790, guid: 63ed9424346a7ad2d84188887560c982, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365820142840378790, guid: 63ed9424346a7ad2d84188887560c982, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365820142840378790, guid: 63ed9424346a7ad2d84188887560c982, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365820142840378790, guid: 63ed9424346a7ad2d84188887560c982, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365820142840378790, guid: 63ed9424346a7ad2d84188887560c982, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365820142840378790, guid: 63ed9424346a7ad2d84188887560c982, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365820142840378790, guid: 63ed9424346a7ad2d84188887560c982, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365820142840378790, guid: 63ed9424346a7ad2d84188887560c982, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3761834535631150079, guid: 63ed9424346a7ad2d84188887560c982, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -102,6 +134,22 @@ PrefabInstance:
     - target: {fileID: 3761834535631150079, guid: 63ed9424346a7ad2d84188887560c982, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: AssignmentButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5256203825186550336, guid: 63ed9424346a7ad2d84188887560c982, type: 3}
+      propertyPath: m_margin.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5256203825186550336, guid: 63ed9424346a7ad2d84188887560c982, type: 3}
+      propertyPath: m_margin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5256203825186550336, guid: 63ed9424346a7ad2d84188887560c982, type: 3}
+      propertyPath: m_margin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5256203825186550336, guid: 63ed9424346a7ad2d84188887560c982, type: 3}
+      propertyPath: m_margin.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5694764667755898570, guid: 63ed9424346a7ad2d84188887560c982, type: 3}
       propertyPath: m_Name
@@ -127,3 +175,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe7ad48686c336e42a06ebb67582ee5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_AssociatedAssignment: {fileID: 0}
+  Name: 

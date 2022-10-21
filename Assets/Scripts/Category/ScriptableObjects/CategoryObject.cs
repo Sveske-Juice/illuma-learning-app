@@ -7,6 +7,7 @@ public class CategoryObject : ScriptableObject
 {
     /* Members. */
     [SerializeField] private string m_CategoryName;
+    // TODO move enum?
     [SerializeField] private AssignmentCategory m_Category;
     [SerializeField] private SetObject[] m_Sets;
 

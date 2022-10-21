@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using System;
 
-public class TextAssignmentBehaviour : AssignmentBase<TextInputObject>
+public class TextInputBehaviour : AssignmentBaseBehaviour<TextInputObject>
 {
     /* Members. */
     [SerializeField] private TextMeshProUGUI m_QuestionText;
@@ -13,7 +13,7 @@ public class TextAssignmentBehaviour : AssignmentBase<TextInputObject>
     /// <summary>
     /// Stores the state of the text assignment. Used for the assignment's FSM.
     /// </summary>
-    private TextAssignmentState m_State = TextAssignmentState.Paused;
+    private TextInputState m_State = TextInputState.Paused;
 
     public override void Load(TextInputObject container)
     {
@@ -28,7 +28,7 @@ public class TextAssignmentBehaviour : AssignmentBase<TextInputObject>
     {
         base.Play();
 
-        m_State = TextAssignmentState.BeginAnimation;
+        m_State = TextInputState.BeginAnimation;
 
         // Subscribe to event when clicked on check button
         CheckButton.OnCheckClick += CheckResult;
@@ -43,14 +43,14 @@ public class TextAssignmentBehaviour : AssignmentBase<TextInputObject>
     {
         switch (m_State)
         {
-            case TextAssignmentState.Paused:
+            case TextInputState.Paused:
                 break;
 
-            case TextAssignmentState.BeginAnimation:
+            case TextInputState.BeginAnimation:
                 BeginAnimate();
                 break;
 
-            case TextAssignmentState.EndAnimation:
+            case TextInputState.EndAnimation:
                 EndAnimate();
                 break;
 

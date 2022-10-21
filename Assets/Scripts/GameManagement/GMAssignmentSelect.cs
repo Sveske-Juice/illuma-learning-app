@@ -33,15 +33,11 @@ public class GMAssignmentSelect : GMBaseState
     }
 
     /* Getters/Setters. */
-
-    // TODO make generic type of assignment
     public AssignmentBaseObject[] Assignments => m_AssignmentSet.Assignments;
 
     private void OnAssignmentSelect(AssignmentBaseObject associatedAssignment)
     {
-        // TODO make generic
-        TextInputObject assignment = associatedAssignment as TextInputObject;
-        Debug.Log($"Chose to train on question: {assignment.Question}");
+        Debug.Log($"Chose to train on assignment named: {associatedAssignment.Name}");
 
         GameManager.Instance.SwitchState(new GMPlayingState(associatedAssignment));
     }
