@@ -40,6 +40,8 @@ public abstract class DisplayMenuBase : MonoBehaviour
     /// </summary>
     protected virtual void Display()
     {
+        Debug.Log($"Displaying menu named: {Menu.name}");
+
         // Show menu
         Menu.SetActive(true);
     }
@@ -49,6 +51,8 @@ public abstract class DisplayMenuBase : MonoBehaviour
     /// </summary>
     protected virtual void Hide()
     {
+        Debug.Log($"Hiding menu named: {Menu.name}");
+
         // Hide menu
         Menu.SetActive(false);
     }

@@ -5,18 +5,18 @@ using TMPro;
 public class AssignmentButton : ContainerLoader, IButton
 {
     /* Members. */
-    private AssignmentContainerBase m_AssociatedAssignment;
+    private AssignmentBaseObject m_AssociatedAssignment;
 
     /// <summary>
     /// Event that gets raised when user clicks on an assignment to train.
     /// </summary>
-    public static event Action<AssignmentContainerBase> OnAssignmentSelect;
+    public static event Action<AssignmentBaseObject> OnAssignmentSelect;
 
     /* Getters/Setters. */
     /// <summary>
     /// The assignment data container this button corresponds to.
     /// </summary>
-    public AssignmentContainerBase AssociatedAssignment { get { return m_AssociatedAssignment; } set { m_AssociatedAssignment = value; } }
+    public AssignmentBaseObject AssociatedAssignment { get { return m_AssociatedAssignment; } set { m_AssociatedAssignment = value; } }
 
     /// <summary>
     /// Loads an assignment data container into the UI element.
@@ -24,7 +24,7 @@ public class AssignmentButton : ContainerLoader, IButton
     /// for when the button is pressed.
     /// </summary>
     /// <param name="assignment">The assignment data container to load.</param>
-    public void Load(AssignmentContainerBase assignment)
+    public void Load(AssignmentBaseObject assignment)
     {
         AssociatedAssignment = assignment;
 

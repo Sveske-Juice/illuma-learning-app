@@ -17,9 +17,10 @@ public class AssignmentFactory : MonoBehaviour
         GMPlayingState.CreateAssignment -= CreateAssignment;
     }
 
-    private IAssignment CreateAssignment(AssignmentContainerBase container)
+    private IAssignment CreateAssignment(AssignmentBaseObject container)
     {
-        TextAssignmentContainer textAssignment = container as TextAssignmentContainer;
+        // TODO make generic
+        TextInputObject textAssignment = container as TextInputObject;
         if (textAssignment != null)
         {
             TextAssignmentBehaviour behaviour = Instantiate(    m_TextAssignmentHolder, Vector3.zero, 

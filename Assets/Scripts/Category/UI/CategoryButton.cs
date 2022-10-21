@@ -5,13 +5,13 @@ using TMPro;
 public class CategoryButton : ContainerLoader, IButton
 {
     /* Members. */
-    private AssignmentCategoryContainer m_AssociatedCategory;
+    private CategoryObject m_AssociatedCategory;
 
     /// <summary>
     /// Event that gets raised when user clicks on a category to train.
     /// Passing the category data container so the subscribers know the context.
     /// </summary>
-    public static event Action<AssignmentCategoryContainer> OnCategorySelect;
+    public static event Action<CategoryObject> OnCategorySelect;
 
     /* Getters/Setters. */
 
@@ -19,7 +19,7 @@ public class CategoryButton : ContainerLoader, IButton
     /// The category data container this button corresponds to. Usefull for 
     /// when the user clicks so the correct category will be chosen
     /// </summary>
-    public AssignmentCategoryContainer AssociatedCategory { get { return m_AssociatedCategory; } set { m_AssociatedCategory = value; SetBtnText(value.ToString()); } }
+    public CategoryObject AssociatedCategory { get { return m_AssociatedCategory; } set { m_AssociatedCategory = value; SetBtnText(value.ToString()); } }
 
     /// <summary>
     /// Loads a category data container into the UI element.
@@ -27,12 +27,12 @@ public class CategoryButton : ContainerLoader, IButton
     /// for when the button is pressed.
     /// </summary>
     /// <param name="categoryContainer">The category data container to load.</param>
-    public void Load(AssignmentCategoryContainer categoryContainer)
+    public void Load(CategoryObject categoryContainer)
     {
         AssociatedCategory = categoryContainer;
 
         // Sets the button's display text to the category
-        string displayText = categoryContainer.DisplayCategory.ToString();
+        string displayText = categoryContainer.Category.ToString();
         SetBtnText(displayText);
 
         base.Load(displayText);

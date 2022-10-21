@@ -5,18 +5,18 @@ using TMPro;
 public class SetButton : ContainerLoader, IButton
 {
     /* Members. */
-    private AssignmentSetContainer m_AssociatedSet;
+    private SetObject m_AssociatedSet;
 
     /// <summary>
     /// Event that gets raised when user clicks on a assignment set to train on.
     /// </summary>
-    public static event Action<AssignmentSetContainer> OnSetSelect;
+    public static event Action<SetObject> OnSetSelect;
 
     /* Getters/Setters. */
     /// <summary>
     /// The assignments set data container this button corresponds to.
     /// </summary>
-    public AssignmentSetContainer AssociatedSet { get { return m_AssociatedSet; } set { m_AssociatedSet = value; } }
+    public SetObject AssociatedSet => m_AssociatedSet;
 
     /// <summary>
     /// Loads an assignment set data container into the UI element.
@@ -24,9 +24,9 @@ public class SetButton : ContainerLoader, IButton
     /// for when the button is pressed.
     /// </summary>
     /// <param name="setContainer">The assignment set data container to load.</param>
-    public void Load(AssignmentSetContainer setContainer)
+    public void Load(SetObject setContainer)
     {
-        AssociatedSet = setContainer;
+        m_AssociatedSet = setContainer;
 
         // Sets the display text of the button to the name of the set container
         SetBtnText(setContainer.Name);

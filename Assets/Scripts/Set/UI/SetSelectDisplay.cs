@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class SetSelectDisplay : DisplayMenuBase
 {
     /* Members. */
@@ -24,10 +25,10 @@ public class SetSelectDisplay : DisplayMenuBase
         }
     }
 
-    private void Display(EAssignmentCategory category)
+    private void Display(AssignmentCategory category)
     {
         Debug.Log($"Displaying assignment sets of category: {category}");
-        AssignmentCategoryContainer[] categories = GameManager.Instance.AssignmentCategories;
+        CategoryObject[] categories = GameManager.Instance.AssignmentCategories;
 
         // Find the index of the category to display
         int categoryIdx = FindCategoryIdx(categories, category);
@@ -35,14 +36,16 @@ public class SetSelectDisplay : DisplayMenuBase
             return;
         
         // The assignment sets under that category.
-        AssignmentSetContainer[] sets = categories[categoryIdx].AssignmentSets;
+        SetObject[] sets = categories[categoryIdx].Sets;
 
         // Create set holders based on the assignment sets
         for (int i = 0; i < sets.Length; i++)
         {
-            AssignmentSetContainer set = sets[i];
-            set.CategoryIdx = categoryIdx;
-            set.SetIdx = i;
+            SetObject set = sets[i];
+
+            // If the set haven't been givin a value from the editor
+            if (set == null)
+                continue;
 
             // Create set button as child of the container in the scroll view
             GameObject setBtn = GameObject.Instantiate( m_SetHolder, Vector3.zero, 
@@ -68,11 +71,11 @@ public class SetSelectDisplay : DisplayMenuBase
     /// </summary>
     /// <param name="categories">The array to search.</param>
     /// <param name="category">The category to find.</param>
-    private int FindCategoryIdx(AssignmentCategoryContainer[] categories, EAssignmentCategory category)
+    private int FindCategoryIdx(CategoryObject[] categories, AssignmentCategory category)
     {
         for (int i = 0; i < categories.Length; i++)
         {
-            if (categories[i].DisplayCategory == category)
+            if (categories[i].Category == category)
             {
                 return i;
             }

@@ -1303,7 +1303,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1596011632}
-  - component: {fileID: 1596011631}
+  - component: {fileID: 1596011634}
+  - component: {fileID: 1596011633}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1311,7 +1312,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1596011631
+--- !u!4 &1596011632
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1596011630}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1596011633
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1323,75 +1339,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa3334ae6cbafe434be957fe4fade221, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AssignmentCategories:
-  - m_DisplayCategory: 0
-    m_AssignmentSets:
-    - m_Name: Simple addition
-      m_Assignments: []
-    - m_Name: Two digit addition
-      m_Assignments: []
-    - m_Name: Addition with 0
-      m_Assignments: []
-    - m_Name: Addition with 10
-      m_Assignments: []
-    - m_Name: Decimal addition
-      m_Assignments: []
-  - m_DisplayCategory: 1
-    m_AssignmentSets:
-    - m_Name: Simple subtraction
-      m_Assignments: []
-    - m_Name: Two digit subtraction
-      m_Assignments: []
-    - m_Name: Subtraction with 0
-      m_Assignments: []
-    - m_Name: Subtraction with 10
-      m_Assignments: []
-    - m_Name: Decimal subtraction
-      m_Assignments: []
-  - m_DisplayCategory: 2
-    m_AssignmentSets:
-    - m_Name: Multiplying by 0
-      m_Assignments:
-      - m_Name: 
-        m_Question: What is 5 * 0?
-        m_CorrectAnswers:
-        - 0
-        - hey
-    - m_Name: Multiplying by 10
-      m_Assignments: []
-    - m_Name: Two digit multiplication
-      m_Assignments: []
-    - m_Name: Simple multiplication
-      m_Assignments: []
-    - m_Name: Decimal multiplication
-      m_Assignments: []
-  - m_DisplayCategory: 3
-    m_AssignmentSets:
-    - m_Name: Simple Division
-      m_Assignments: []
-    - m_Name: Dividing by 2
-      m_Assignments: []
-    - m_Name: Dividing by 1
-      m_Assignments: []
-    - m_Name: Dividing by 10
-      m_Assignments: []
-    - m_Name: Two digit division
-      m_Assignments: []
---- !u!4 &1596011632
-Transform:
+--- !u!114 &1596011634
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1596011630}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.57042193, y: -0.33167714, z: 0.0034543565}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00dbd4490703acd6aeb75d206e7b558, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Subjects:
+  - {fileID: 11400000, guid: b7eb5b455140ceb1aad520882e44df51, type: 2}
 --- !u!1 &1610615399
 GameObject:
   m_ObjectHideFlags: 0

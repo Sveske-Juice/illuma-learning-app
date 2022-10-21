@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
+[RequireComponent(typeof(SubjectManager))]
 public class GameManager : MonoBehaviour
 {
     /* Singleton pattern. */
@@ -20,27 +20,31 @@ public class GameManager : MonoBehaviour
     }}
 
     /// <summary>
-    /// Event that gets raised when the game state changes.
+    /// Event that gets raised when the game state changes, 
+    /// passing the new state to the subscribed delegate.
     /// </summary>
     public static event Action<GMBaseState> OnGameStateChange;
 
     /* Members. */
-    [SerializeField] private AssignmentCategoryContainer[] m_AssignmentCategories;
     private GMBaseState m_CurrentGameState;
+    private ISubjectHolder m_SubjectHolder;
 
     /* Getters/Setters. */
-    /// <summary>
-    /// The assignment categories can for example be multiplication, addition etc.
-    /// They all consists of assignment sets.
-    /// </summary>
-    public AssignmentCategoryContainer[] AssignmentCategories { get { return m_AssignmentCategories; } private set { m_AssignmentCategories = value; } }
     public GMBaseState CurrentGameState { get { return m_CurrentGameState; } private set { m_CurrentGameState = value; } }
+
+    // TODO support for more subjects (dont use Subjects[0]), fine for now tho
+    public CategoryObject[] AssignmentCategories => m_SubjectHolder.Subjects[0].Categories;
 
     private void Awake()
     {
         // Singleton: Set this instance to the only one
         Instance = this;
 
+        m_SubjectHolder = GetComponent<ISubjectHolder>();
+    }
+
+    private void Start()
+    {
         // Set the start state to category selection
         SwitchState(new GMCategorySelectState());
     }

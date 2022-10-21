@@ -12,16 +12,16 @@ public class GMSetSelect : GMBaseState
     /// Constructor of Set Select state.
     /// </summary>
     /// <param name="category">The category in which the assignment sets lies within. </param>
-    public GMSetSelect(EAssignmentCategory category)
+    public GMSetSelect(AssignmentCategory category)
     {
-        Category = category;
+        m_Category = category;
     }
 
     /* Members. */
-    private EAssignmentCategory m_Category;
+    private AssignmentCategory m_Category;
 
     /* Getters/Setters. */
-    public EAssignmentCategory Category { get; private set; }
+    public AssignmentCategory Category => m_Category;
 
     public override void Enter()
     {
@@ -44,8 +44,8 @@ public class GMSetSelect : GMBaseState
     /// Will handle going to the next state of showing each assignment
     /// in that state.
     /// </summary>
-    /// <param name="setIdx">The index in the assignment set array the user clicks on. </param>
-    private void OnSetSelection(AssignmentSetContainer set)
+    /// <param name="set">The set the user clicks on. </param>
+    private void OnSetSelection(SetObject set)
     {
         Debug.Log($"Chose set: {set.Name}");
         GameManager.Instance.SwitchState(new GMAssignmentSelect(set));

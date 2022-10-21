@@ -28,12 +28,12 @@ public class GMCategorySelectState : GMBaseState
     /// Gets called when a category button is clicked.
     /// </summary>
     /// <param name="categoryContainer">The category data container corresponding to the clicked button. </param>
-    private void OnCategoryBtnClick(AssignmentCategoryContainer categoryContainer)
+    private void OnCategoryBtnClick(CategoryObject categoryContainer)
     {
-        string displayText = categoryContainer.DisplayCategory.ToString();
+        string displayText = categoryContainer.Category.ToString();
         Debug.Log($"Selected category: {displayText}");
 
         // Switch state to set select
-        GameManager.Instance.SwitchState(new GMSetSelect(categoryContainer.DisplayCategory));
+        GameManager.Instance.SwitchState(new GMSetSelect(categoryContainer.Category));
     }
 }

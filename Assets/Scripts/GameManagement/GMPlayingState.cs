@@ -5,16 +5,16 @@ using UnityEngine;
 public class GMPlayingState : GMBaseState
 {
     /* Memebers. */
-    private AssignmentContainerBase m_AssignmentContainer;
+    private AssignmentBaseObject m_AssignmentContainer;
     private IAssignment m_AssignmentBehaviour;
 
-    public static event Func<AssignmentContainerBase, IAssignment> CreateAssignment;
+    public static event Func<AssignmentBaseObject, IAssignment> CreateAssignment;
 
     /// <summary>
     /// Constructor of the playing assignment game state.
     /// </summary>
     /// <param name="assignmentContainer">The assignment data container that will be played.</param>
-    public GMPlayingState(AssignmentContainerBase assignmentContainer)
+    public GMPlayingState(AssignmentBaseObject assignmentContainer)
     {
         m_AssignmentContainer = assignmentContainer;
     }

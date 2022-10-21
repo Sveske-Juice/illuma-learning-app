@@ -9,9 +9,11 @@ using UnityEngine;
 /// </summary>
 public class GMAssignmentSelect : GMBaseState
 {
-    public GMAssignmentSelect(AssignmentSetContainer assignment)
+    /* Members. */
+    private SetObject m_AssignmentSet;
+    public GMAssignmentSelect(SetObject set)
     {
-        m_AssignmentSet = assignment;
+        m_AssignmentSet = set;
     }
 
     public override void Enter()
@@ -30,17 +32,15 @@ public class GMAssignmentSelect : GMBaseState
         AssignmentButton.OnAssignmentSelect -= OnAssignmentSelect;
     }
 
-    /* Members. */
-    private AssignmentSetContainer m_AssignmentSet;
-
     /* Getters/Setters. */
-    // TODO make generic type of assignment
-    public TextAssignmentContainer[] Assignments { get { return m_AssignmentSet.Assignments; } }
 
-    private void OnAssignmentSelect(AssignmentContainerBase associatedAssignment)
+    // TODO make generic type of assignment
+    public AssignmentBaseObject[] Assignments => m_AssignmentSet.Assignments;
+
+    private void OnAssignmentSelect(AssignmentBaseObject associatedAssignment)
     {
         // TODO make generic
-        TextAssignmentContainer assignment = associatedAssignment as TextAssignmentContainer;
+        TextInputObject assignment = associatedAssignment as TextInputObject;
         Debug.Log($"Chose to train on question: {assignment.Question}");
 
         GameManager.Instance.SwitchState(new GMPlayingState(associatedAssignment));

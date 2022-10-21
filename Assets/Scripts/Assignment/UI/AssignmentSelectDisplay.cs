@@ -10,9 +10,9 @@ public class AssignmentSelectDisplay : DisplayMenuBase
 
     protected override void OnGameStateChanged(GMBaseState state)
     {
-        GMAssignmentSelect assState = state as GMAssignmentSelect;
-        if (assState != null) {
-            Display(assState.Assignments);
+        GMAssignmentSelect assignmentSelectState = state as GMAssignmentSelect;
+        if (assignmentSelectState != null) {
+            Display(assignmentSelectState.Assignments);
         }
         else
         {
@@ -21,7 +21,7 @@ public class AssignmentSelectDisplay : DisplayMenuBase
     }
 
     // TODO make generic
-    private void Display(TextAssignmentContainer[] assignments)
+    private void Display(AssignmentBaseObject[] assignments)
     {
         for (int i = 0; i < assignments.Length; i++)
         {

@@ -1,4 +1,4 @@
-public enum EAssignmentCategory
+public enum AssignmentCategory
 {
     Addition,
     Subtraction,

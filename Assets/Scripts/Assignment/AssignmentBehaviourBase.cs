@@ -5,7 +5,7 @@ using UnityEngine;
 /// The abstract/base class for all assignment behaviours. It will be the super class
 /// for fx the TextAssignment Behaviour.
 /// </summary>
-public abstract class AssignmentBase<TContainerContext> : MonoBehaviour, IAssignment where TContainerContext : AssignmentContainerBase
+public abstract class AssignmentBase<TContainerContext> : MonoBehaviour, IAssignment where TContainerContext : AssignmentBaseObject
 {
     /* Members. */
     public static event Action OnIncorrectAnswer;
@@ -41,4 +41,4 @@ public abstract class AssignmentBase<TContainerContext> : MonoBehaviour, IAssign
 }
 
 // Default type
-public abstract class AssignmentBase : AssignmentBase<AssignmentContainerBase> { }
+public abstract class AssignmentBase : AssignmentBase<AssignmentBaseObject> { }

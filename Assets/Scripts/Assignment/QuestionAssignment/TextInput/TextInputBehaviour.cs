@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using System;
 
-public class TextAssignmentBehaviour : AssignmentBase<TextAssignmentContainer>
+public class TextAssignmentBehaviour : AssignmentBase<TextInputObject>
 {
     /* Members. */
     [SerializeField] private TextMeshProUGUI m_QuestionText;
@@ -15,7 +15,7 @@ public class TextAssignmentBehaviour : AssignmentBase<TextAssignmentContainer>
     /// </summary>
     private TextAssignmentState m_State = TextAssignmentState.Paused;
 
-    public override void Load(TextAssignmentContainer container)
+    public override void Load(TextInputObject container)
     {
         base.Load(container);
 
