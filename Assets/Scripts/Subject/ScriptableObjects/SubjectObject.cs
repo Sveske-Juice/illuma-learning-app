@@ -2,17 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SubjectObject : MonoBehaviour
+[CreateAssetMenu(fileName = "New Subject", menuName = "Subject")]
+public class SubjectObject : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    /* Members. */
+    [SerializeField] private string m_SubjectName;
+    [SerializeField] private CategoryObject[] m_Categories;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    /* Getters/Setters. */
+    public string Name => m_SubjectName;
+    public CategoryObject[] Categories => m_Categories;
 }
