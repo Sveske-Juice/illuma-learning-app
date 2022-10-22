@@ -10,9 +10,9 @@ public class MultipleChoiceObject : QuestionBaseObject
 
     /* Getters/Setters. */
     public string[] Choices => m_Choices;
-
+    protected override GameObject m_AssignmentHolderPrefab => Resources.Load<GameObject>("Prefabs/UI/MultipleChoiceAssignment");
     public override IPlayable CreateAssignment(Transform assignmentParent)
     {
-        throw new System.NotImplementedException();
+        return base.CreateAssignment<MultipleChoiceBehaviour, MultipleChoiceObject>(assignmentParent, this);
     }
 }

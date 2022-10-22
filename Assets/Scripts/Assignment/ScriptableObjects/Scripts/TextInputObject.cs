@@ -5,14 +5,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Text Input Assignment", menuName = "Assignment/Question/TextInput")]
 public class TextInputObject : QuestionBaseObject
 {
-    [SerializeField] private GameObject m_AssignmentHolderPrefab;
-    // TODO use delegate or something
+    protected override GameObject m_AssignmentHolderPrefab => Resources.Load<GameObject>("Prefabs/UI/TextInputAssignment");
+
     public override IPlayable CreateAssignment(Transform assignmentParent)
     {
-        TextInputBehaviour behaviour = Instantiate( m_AssignmentHolderPrefab, Vector3.zero, 
-                                                    Quaternion.identity, assignmentParent)
-                                                    .GetComponent<TextInputBehaviour>();
-        behaviour.Load(this);
-        return behaviour;
+        return base.CreateAssignment<TextInputBehaviour, TextInputObject>(assignmentParent, this);
     }
 }

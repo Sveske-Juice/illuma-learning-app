@@ -666,7 +666,7 @@ GameObject:
   - component: {fileID: 3690883752155463464}
   - component: {fileID: 2339508325535064136}
   m_Layer: 5
-  m_Name: TextAssignmentHolder
+  m_Name: TextInputAssignment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

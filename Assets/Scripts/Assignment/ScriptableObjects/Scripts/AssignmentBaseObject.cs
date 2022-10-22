@@ -11,17 +11,36 @@ public abstract class AssignmentBaseObject : ScriptableObject
 
     /*  NOTE: This field will be set automatically externally. I 
         think this is okay because there will only be one instance
-        for each scriptable object assignment. */
+        for each scriptable object assignment. 
+    */
     public int AssignmentIdx { get { return m_AssignmentIdx; } set { m_AssignmentIdx = value; } }
 
-    /*
-    public virtual IPlayable CreateAssignment<BehaviourType>(GameObject assignmentHolder) where BehaviourType : AssignmentBaseBehaviour
+    /// <summary>
+    /// The prefab for the assignment menu/window that will
+    /// be displayed when the assignment is created. Will be
+    /// different for each assignment, thats why it's abstract
+    /// </summary>
+    protected abstract GameObject m_AssignmentHolderPrefab { get; }
+
+    /// <summary>
+    /// Creates an assignment prefab. The prefab is different based on what 
+    /// BehaviourType and ContainerType is specified. The prefab is specified
+    /// by the abstract m_AssignmentHolderPrefab property. This method will get
+    /// called from derived classes' abstract CreateAssignment(Transform) method.
+    /// </summary>
+    /// <typeparam name="BehaviourType">
+    /// The behaviour type to create. They all derive from AssignmentBaseBehaviour.</typeparam>
+    /// <typeparam name="ContainerType">
+    /// The type of the data container (SO) the behaviour consists of. Will also be the
+    ///  type of container that will be loaded into the behaviour to initalize it.</typeparam>
+    protected IPlayable CreateAssignment<BehaviourType, ContainerType>(Transform assignmentParent, ContainerType container)
+        where BehaviourType : AssignmentBaseBehaviour<ContainerType> where ContainerType : AssignmentBaseObject
     {
-        BehaviourType behaviour = Instantiate(  assignmentHolder, Vector3.zero, 
-                                                Quaternion.identity, m_AssignmentParent)
+        BehaviourType behaviour = Instantiate(  m_AssignmentHolderPrefab, Vector3.zero, 
+                                                Quaternion.identity, assignmentParent)
                                                 .GetComponent<BehaviourType>();
-        behaviour.Load(this);
+        behaviour.Load(container);
         return behaviour;
-    }*/
+    }
     public abstract IPlayable CreateAssignment(Transform assignmentParent);
 }
