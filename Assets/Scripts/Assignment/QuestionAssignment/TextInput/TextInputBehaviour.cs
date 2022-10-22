@@ -21,7 +21,6 @@ public class TextInputBehaviour : AssignmentBaseBehaviour<TextInputObject>
 
         /* Initialize the prefab with container ex: question text etc. */
         m_QuestionText.text = m_Ctx.Question;
-
     }
 
     public override void Play()

@@ -8,6 +8,17 @@ public class MultipleChoiceBehaviour : AssignmentBaseBehaviour<MultipleChoiceObj
     /* Members. */
     [SerializeField] private TextMeshProUGUI m_QuestionText;
     [SerializeField] private GameObject m_ChoicePrefab;
+    [SerializeField] private Transform m_ChoiceGridParent;
+
+    private void OnEnable()
+    {
+        ChoiceButton.OnChoiceClick += OnChoiceSelect;
+    }
+
+    private void OnDisable()
+    {
+        ChoiceButton.OnChoiceClick -= OnChoiceSelect;
+    }
 
     public override void Load(MultipleChoiceObject container)
     {
@@ -15,7 +26,16 @@ public class MultipleChoiceBehaviour : AssignmentBaseBehaviour<MultipleChoiceObj
 
         /* Initialize the prefab with container ex: question text etc. */
         m_QuestionText.text = container.Question;
+        
+        // Create multiple choice buttons
+        for (int i = 0; i < container.Choices.Length; i++)
+        {
 
-        Debug.Log(container.Choices);
+        }
+    }
+
+    private void OnChoiceSelect(int choiceIdx)
+    {
+        Debug.Log($"Selected choice: {m_Ctx.Choices[choiceIdx]}");
     }
 }
