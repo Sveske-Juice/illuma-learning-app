@@ -8,11 +8,14 @@ public class ChoiceButton : ContainerLoader, IButton
     /* Members. */
     private int m_ChoiceIdx;
 
-    // TODO maybe move to a choice container instead
+    // TODO optimise to load a choice container instead
     public void Load(MultipleChoiceObject container, int choiceIdx)
     {
+        string choice = container.Choices[choiceIdx];
+        base.Load(choice);
+        
         m_ChoiceIdx = choiceIdx;
-        SetBtnText(container.Choices[choiceIdx]);
+        SetBtnText(choice);
     }
 
     public void OnClick()

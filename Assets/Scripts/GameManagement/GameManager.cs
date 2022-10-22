@@ -28,12 +28,10 @@ public class GameManager : MonoBehaviour
     /* Members. */
     private GMBaseState m_CurrentGameState;
     private ISubjectHolder m_SubjectHolder;
-    [SerializeField] private AssignmentFactory m_AssignmentFactory;
     [SerializeField] private Transform m_AssignmentParent;
 
     /* Getters/Setters. */
     public GMBaseState CurrentGameState => m_CurrentGameState;
-    public AssignmentFactory AssignmentFactory => m_AssignmentFactory;
 
     // TODO support for more subjects (dont use Subjects[0]), fine for now tho
     public CategoryObject[] AssignmentCategories => m_SubjectHolder.Subjects[0].Categories;
@@ -45,11 +43,6 @@ public class GameManager : MonoBehaviour
         Instance = this;
 
         m_SubjectHolder = GetComponent<ISubjectHolder>();
-
-        if (m_AssignmentFactory == null)
-        {
-            Debug.LogError("No assignment factory connected to the gamemanager!");
-        }
     }
 
     private void Start()

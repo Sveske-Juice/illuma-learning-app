@@ -30,7 +30,8 @@ public class MultipleChoiceBehaviour : AssignmentBaseBehaviour<MultipleChoiceObj
         // Create multiple choice buttons
         for (int i = 0; i < container.Choices.Length; i++)
         {
-
+            ChoiceButton choiceButton = Instantiate(m_ChoicePrefab, Vector3.zero, Quaternion.identity, m_ChoiceGridParent).GetComponent<ChoiceButton>();
+            choiceButton.Load(container, i);
         }
     }
 
