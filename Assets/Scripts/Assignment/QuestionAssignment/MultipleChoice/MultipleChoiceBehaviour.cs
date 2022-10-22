@@ -7,6 +7,7 @@ public class MultipleChoiceBehaviour : AssignmentBaseBehaviour<MultipleChoiceObj
 {
     /* Members. */
     [SerializeField] private TextMeshProUGUI m_QuestionText;
+    [SerializeField] private GameObject m_ChoicePrefab;
 
     public override void Load(MultipleChoiceObject container)
     {

@@ -9,8 +9,10 @@ public abstract class ContainerLoader : MonoBehaviour
     /// and will print debug info about what container is being loaded.
     /// </summary>
     /// <param name="containerName">The name of the container being loaded.</param>
-    public virtual void Load(string containerName)
+    protected void Load(string containerName)
     {
         Debug.Log($"Loading element with container named: {containerName}");
     }
+
+    
 }
