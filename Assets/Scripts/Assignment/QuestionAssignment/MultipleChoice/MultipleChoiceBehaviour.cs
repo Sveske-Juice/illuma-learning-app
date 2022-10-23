@@ -37,6 +37,16 @@ public class MultipleChoiceBehaviour : AssignmentBaseBehaviour<MultipleChoiceObj
 
     private void OnChoiceSelect(int choiceIdx)
     {
-        Debug.Log($"Selected choice: {m_Ctx.Choices[choiceIdx]}");
+        string choice = m_Ctx.Choices[choiceIdx];
+        Debug.Log($"Selected choice: {choice}");
+
+        // Validate answer
+        for (int i = 0; i < m_Ctx.CorrectAnswers.Length; i++)
+        {
+            if (choice == m_Ctx.CorrectAnswers[i])
+            {
+                Debug.Log("CORRECT");
+            }
+        }
     }
 }
