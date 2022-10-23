@@ -23,19 +23,31 @@ public abstract class AssignmentBaseBehaviour<ContainerType> : MonoBehaviour, IP
         m_Ctx = ctx;
     }
 
+    /// <summary>
+
+    /// Loads a container on to a assignment behaviour. For example in
+    /// a QuestionAssignment, this method will set the question text etc.
+    /// It will also call base.BaseLoad() for common loading logic.
+    /// </summary>
+    /// <param name="container">The data container (SO) to load into this behaviour. </param>
+
     public virtual void Load(ContainerType container)
     {
+        /*
+        Common code that needs to be run for all sub-classes.
+        Will set the context (data container (SO)), so each
+        behaviour can reference it with m_Ctx.
+        */
         // Set the context so the this behaviour has access to the data container
         SetContext(container);
     }
 
     /// <summary>
-    /// Gets called when the assignment should start being played.
-    /// Gets called from the playing state game manager once the 
-    /// assignment has been constructed and loaded with its context.
+    /// Will start playing the assignment
     /// </summary>
     public virtual void Play()
     {
+        /* Common code that gets run for all sub-classes. */
         Debug.Log($"Starting play of assignment with index: {m_Ctx.AssignmentIdx}");
     }
 }

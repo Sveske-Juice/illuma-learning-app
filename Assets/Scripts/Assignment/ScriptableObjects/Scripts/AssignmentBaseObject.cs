@@ -23,7 +23,7 @@ public abstract class AssignmentBaseObject : ScriptableObject
     protected abstract GameObject m_AssignmentHolderPrefab { get; }
 
     /// <summary>
-    /// Creates an assignment prefab. The prefab is different based on what 
+    /// Factory method that creates a prefab that is different based on what 
     /// BehaviourType and ContainerType is specified. The prefab is specified
     /// by the abstract m_AssignmentHolderPrefab property. This method will get
     /// called from derived classes' abstract CreateAssignment(Transform) method.
@@ -42,5 +42,12 @@ public abstract class AssignmentBaseObject : ScriptableObject
         behaviour.Load(container);
         return behaviour;
     }
+
+    /// <summary>
+    /// Each sub-class of AssignmentBaseObject needs to decide which assignment is created.
+    /// Will call the base.CreateAssignment() factory method with the correct type for that
+    /// specific container. That way each container decides which behaviour to instantiate.
+    /// </summary>
+    /// <param name="assignmentParent">The parent the instantiated assignment will be a child of. </param>
     public abstract IPlayable CreateAssignment(Transform assignmentParent);
 }

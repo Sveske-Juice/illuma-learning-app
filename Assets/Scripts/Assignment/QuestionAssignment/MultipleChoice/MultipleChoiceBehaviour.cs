@@ -26,7 +26,7 @@ public class MultipleChoiceBehaviour : AssignmentBaseBehaviour<MultipleChoiceObj
 
         /* Initialize the prefab with container ex: question text etc. */
         m_QuestionText.text = container.Question;
-        
+
         // Create multiple choice buttons
         for (int i = 0; i < container.Choices.Length; i++)
         {
