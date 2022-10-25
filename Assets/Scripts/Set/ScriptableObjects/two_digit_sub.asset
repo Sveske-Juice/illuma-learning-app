@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce52d882750ea3d98acfd5ebe17dc51f, type: 3}
+  m_Name: two_digit_sub
+  m_EditorClassIdentifier: 
+  m_SetName: Two digit subtraction
+  m_Assignments:
+  - {fileID: 11400000, guid: ec18bca1182bbb7e690ba74a26af68c8, type: 2}
+  - {fileID: 11400000, guid: 32b59d0b37e41dd7f83b2a0f2ad0d3cd, type: 2}
+  - {fileID: 11400000, guid: fb1b25e43410909a9bb1ab4138022ad6, type: 2}
+  - {fileID: 11400000, guid: 69fc14b3f6771813c87530998c327b2f, type: 2}
+  - {fileID: 11400000, guid: c0078ed6327101424b05df6a2d9947e6, type: 2}
+  - {fileID: 11400000, guid: c2c968d1f53df1511a5853c1e92a6560, type: 2}

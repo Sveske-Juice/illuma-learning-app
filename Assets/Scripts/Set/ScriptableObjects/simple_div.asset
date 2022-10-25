@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce52d882750ea3d98acfd5ebe17dc51f, type: 3}
+  m_Name: simple_div
+  m_EditorClassIdentifier: 
+  m_SetName: Simple division
+  m_Assignments:
+  - {fileID: 11400000, guid: 45a17c436dd21a3f5b8fbd10779f3ce4, type: 2}
+  - {fileID: 11400000, guid: 4dd9284f2b1aabe4f8d7375def852f72, type: 2}
+  - {fileID: 11400000, guid: b6cbd3fc123695193aa7ac9bbcaff6b1, type: 2}
+  - {fileID: 11400000, guid: cee75cc9f75b7f4338c36a927d512f2a, type: 2}
+  - {fileID: 11400000, guid: 5177833caa8030da4b20629735e68cd2, type: 2}

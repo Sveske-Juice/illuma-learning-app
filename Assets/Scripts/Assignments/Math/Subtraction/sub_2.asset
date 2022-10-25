@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a654dd7ec945c96aeb94baba1855283b, type: 3}
-  m_Name: Addition
+  m_Script: {fileID: 11500000, guid: 844497e43b4e948d28c15f0a9b09ad1f, type: 3}
+  m_Name: sub_2
   m_EditorClassIdentifier: 
-  m_CategoryName: Addition
-  m_Category: 0
-  m_Sets:
-  - {fileID: 11400000, guid: 11fbec1949e46f000beda3fdb85eeeb2, type: 2}
-  - {fileID: 11400000, guid: a7fedad13173cf78aa5fd00c9056d4d0, type: 2}
+  m_AssignmentName: 
+  m_Question: 6 - 2
+  m_CorrectAnswers:
+  - 4
