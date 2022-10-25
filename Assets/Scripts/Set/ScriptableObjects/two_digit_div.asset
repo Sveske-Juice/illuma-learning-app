@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce52d882750ea3d98acfd5ebe17dc51f, type: 3}
+  m_Name: two_digit_div
+  m_EditorClassIdentifier: 
+  m_SetName: Two digit division
+  m_Assignments:
+  - {fileID: 11400000, guid: f018d022d7f26975da30a1d2f16ce7b0, type: 2}
+  - {fileID: 11400000, guid: 991c445c3bf56a9d8862ffafc4ee6f67, type: 2}
+  - {fileID: 11400000, guid: b6017cdcd3d6c86cbacfb84204f19d7b, type: 2}
+  - {fileID: 11400000, guid: f2895fff1cf5d37f285d3b663aeed3cb, type: 2}
+  - {fileID: 11400000, guid: 2cf89fec4f031302cb1600a89e633739, type: 2}
