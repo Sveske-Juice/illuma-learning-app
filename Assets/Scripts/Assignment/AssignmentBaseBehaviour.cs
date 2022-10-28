@@ -8,8 +8,8 @@ using UnityEngine;
 public abstract class AssignmentBaseBehaviour<ContainerType> : MonoBehaviour, IPlayable where ContainerType : AssignmentBaseObject
 {
     /* Members. */
-    public static event Action OnIncorrectAnswer;
-    public static event Action OnCorrectAnswer;
+    public static Action OnIncorrectAnswer;
+    public static Action OnCorrectAnswer;
 
     protected ContainerType m_Ctx;
 
@@ -40,6 +40,19 @@ public abstract class AssignmentBaseBehaviour<ContainerType> : MonoBehaviour, IP
         */
         // Set the context so the this behaviour has access to the data container
         SetContext(container);
+
+        OnIncorrectAnswer += IncorrectAnswer;
+        OnCorrectAnswer += CorrectAnswer;
+    }
+
+    protected virtual void IncorrectAnswer()
+    {
+        Debug.Log("incorrect");
+    }
+
+    protected virtual void CorrectAnswer()
+    {
+        Debug.Log("COrrect");
     }
 
     /// <summary>

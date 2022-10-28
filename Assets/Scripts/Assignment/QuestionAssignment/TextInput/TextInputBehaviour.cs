@@ -87,7 +87,14 @@ public class TextInputBehaviour : AssignmentBaseBehaviour<TextInputObject>
         for (int i = 0; i < m_Ctx.CorrectAnswers.Length; i++)
         {
             if (answer == m_Ctx.CorrectAnswers[i])
-                Debug.Log("CORRECT!");
+            {
+                OnCorrectAnswer?.Invoke();
+            }
+            else
+            {
+                OnIncorrectAnswer?.Invoke();
+            }
+
         }
     }
 }
