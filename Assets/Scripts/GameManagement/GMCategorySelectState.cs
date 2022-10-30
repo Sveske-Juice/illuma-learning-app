@@ -13,7 +13,8 @@ public class GMCategorySelectState : GMBaseState
         base.Enter();
 
         // Subscribe to the event raised when clicked on a category button
-        CategoryButton.OnCategorySelect += OnCategoryBtnClick;
+        if (!GameManager.GameLoaded) // FIXME se gm for info
+            CategoryButton.OnCategorySelect += OnCategoryBtnClick;
     }
 
     public override void Exit()

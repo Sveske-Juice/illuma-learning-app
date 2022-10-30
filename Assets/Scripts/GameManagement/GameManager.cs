@@ -5,6 +5,11 @@ using UnityEngine;
 [RequireComponent(typeof(SubjectManager))]
 public class GameManager : MonoBehaviour
 {
+    /* FIXME only here because for some reason 
+    when switching scenes events do not get unsubscribed
+    properly leading two triggering events twice. */
+    public static bool GameLoaded = false;
+
     /* Singleton pattern. */
     private static GameManager m_Instance;
     public static GameManager Instance { get 
@@ -52,7 +57,7 @@ public class GameManager : MonoBehaviour
     /// <summary>The Assignment Container the current running assignment behaviour coresponds to. </summary>
     public AssignmentBaseObject AssignmentContainer { get { return m_AssignmentContainer; } set { m_AssignmentContainer = value; } }
 
-    private void Awake()
+    private void OnEnable()
     {
         // Singleton: Set this instance to the only one
         Instance = this;
@@ -84,6 +89,7 @@ public class GameManager : MonoBehaviour
         m_CurrentGameState = newState;
         newState.Enter();
 
+        //Debug.LogWarning("Rasining on game state changed!");
         OnGameStateChange?.Invoke(newState);
     }
 

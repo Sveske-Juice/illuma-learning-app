@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4551b54a1d86f2f4a284a2e04ba9702, type: 3}
-  m_Name: Assignment_mult_3
+  m_Name: Assignment_mult_6
   m_EditorClassIdentifier: 
   m_AssignmentName: 
-  m_Question: What is 0 * 3?
+  m_Question: What is 0(5 * 3)?
   m_CorrectAnswers:
   - 0
   m_Choices:
-  - 0
+  - 2,75
+  - 53
   - 3
-  - 30
-  - 0.3
-  - -0.3
+  - 5
+  - 0

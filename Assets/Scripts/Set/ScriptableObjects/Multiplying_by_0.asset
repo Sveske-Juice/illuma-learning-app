@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce52d882750ea3d98acfd5ebe17dc51f, type: 3}
   m_Name: Multiplying_by_0
   m_EditorClassIdentifier: 
-  m_SetName: Multiplying by 0
+  m_SetName: Multiplying by zero
   m_Assignments:
-  - {fileID: 11400000, guid: 7e9ccc7cf3f5c91e18c6a40aa7a40287, type: 2}
-  - {fileID: 11400000, guid: f7a3e455cec7c538ca2e6c3de65c9717, type: 2}
   - {fileID: 11400000, guid: 2d2d0ccaad579a8469585c516aa27899, type: 2}
+  - {fileID: 11400000, guid: f7a3e455cec7c538ca2e6c3de65c9717, type: 2}
+  - {fileID: 11400000, guid: 8185a1038ea922f0ea4c694d46588225, type: 2}
+  - {fileID: 11400000, guid: 7e9ccc7cf3f5c91e18c6a40aa7a40287, type: 2}
+  - {fileID: 11400000, guid: 4897be7dbf1d29624a746e3720eda72d, type: 2}
+  - {fileID: 11400000, guid: d0a742eb1253de17289bb512b27f0ede, type: 2}

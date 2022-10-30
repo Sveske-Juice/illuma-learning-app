@@ -11,6 +11,7 @@ public class BackButton : MonoBehaviour, IButton
         // homescreen but no time to make better
         if (GameManager.Instance.CommandHandler.CommandLength <= 1)
         {
+            GameManager.GameLoaded = true;
             SceneManager.LoadScene("Homescreen");
             return;
         }

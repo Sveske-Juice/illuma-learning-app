@@ -1725,7 +1725,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Please select a set to train
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5cd3747696decf94d919799f4f78c9fb, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 744955aaf7eb636409102ad93308622d, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1753,7 +1753,7 @@ MonoBehaviour:
   m_fontSize: 128
   m_fontSizeBase: 128
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0

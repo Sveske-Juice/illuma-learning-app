@@ -151,6 +151,14 @@ PrefabInstance:
       propertyPath: m_margin.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5256203825186550336, guid: 63ed9424346a7ad2d84188887560c982, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 5256203825186550336, guid: 63ed9424346a7ad2d84188887560c982, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 5694764667755898570, guid: 63ed9424346a7ad2d84188887560c982, type: 3}
       propertyPath: m_Name
       value: AssignmentHolder
@@ -175,5 +183,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe7ad48686c336e42a06ebb67582ee5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AssociatedAssignment: {fileID: 0}
-  Name: 
