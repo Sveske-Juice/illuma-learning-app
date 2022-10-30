@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CommandHandler
 {
-    private List<ICommand> m_Commands = new List<ICommand>();
+    public List<ICommand> m_Commands = new List<ICommand>();
 
     /// <summary>
     /// Adds an ICommand to the list/stack of commands.
@@ -30,8 +30,8 @@ public class CommandHandler
         if (m_Commands.Count <= 0)
             return;
 
-        m_Commands[m_Commands.Count].Undo();
-        m_Commands.RemoveAt(m_Commands.Count);
+        m_Commands[m_Commands.Count - 1].Undo();
+        m_Commands.RemoveAt(m_Commands.Count - 1);
     }
 
     /// <summary>
@@ -42,6 +42,6 @@ public class CommandHandler
         if (m_Commands.Count <= 0)
             return;
         
-        m_Commands[m_Commands.Count].Execute();
+        m_Commands[m_Commands.Count - 1].Execute();
     }
 }
