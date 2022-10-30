@@ -8,20 +8,10 @@ using UnityEngine;
 /// </summary>
 public class GMSetSelect : GMBaseState
 {
-    /// <summary>
-    /// Constructor of Set Select state.
-    /// </summary>
-    /// <param name="category">The category in which the assignment sets lies within. </param>
-    public GMSetSelect(AssignmentCategory category)
-    {
-        m_Category = category;
-    }
-
     /* Members. */
-    private AssignmentCategory m_Category;
+    
 
     /* Getters/Setters. */
-    public AssignmentCategory Category => m_Category;
 
     public override void Enter()
     {
@@ -48,6 +38,9 @@ public class GMSetSelect : GMBaseState
     private void OnSetSelection(SetObject set)
     {
         Debug.Log($"Chose set: {set.Name}");
-        GameManager.Instance.SwitchState(new GMAssignmentSelect(set));
+
+        // Switch state to set Assignment select
+        GameManager.Instance.AssignmentSet = set;
+        GameManager.Instance.CommandHandler.AddCommand(new GMStateCommand<GMAssignmentSelect>());
     }
 }

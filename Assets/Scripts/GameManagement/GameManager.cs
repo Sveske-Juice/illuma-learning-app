@@ -26,16 +26,31 @@ public class GameManager : MonoBehaviour
     public static event Action<GMBaseState> OnGameStateChange;
 
     /* Members. */
+    private CommandHandler m_CommandHandler = new CommandHandler();
     private GMBaseState m_CurrentGameState;
     private ISubjectHolder m_SubjectHolder;
     [SerializeField] private Transform m_AssignmentParent;
 
+    private SetObject m_AssignmentSet;
+    private AssignmentCategory m_Category;
+    private AssignmentBaseObject m_AssignmentContainer;
+
     /* Getters/Setters. */
+    public CommandHandler CommandHandler => m_CommandHandler;
     public GMBaseState CurrentGameState => m_CurrentGameState;
 
     // TODO support for more subjects (dont use Subjects[0]), fine for now tho
     public CategoryObject[] AssignmentCategories => m_SubjectHolder.Subjects[0].Categories;
     public Transform AssignmentParent => m_AssignmentParent;
+
+    /// <summary>The selected Assignment set in the current category. </summary>
+    public SetObject AssignmentSet { get { return m_AssignmentSet; } set { m_AssignmentSet = value; } }
+    
+    /// <summary>The category in which the current assignment set lie within. </summary>
+    public AssignmentCategory Category { get { return m_Category; } set { m_Category = value; } }
+
+    /// <summary>The Assignment Container the current running assignment behaviour coresponds to. </summary>
+    public AssignmentBaseObject AssignmentContainer { get { return m_AssignmentContainer; } set { m_AssignmentContainer = value; } }
 
     private void Awake()
     {
@@ -50,7 +65,6 @@ public class GameManager : MonoBehaviour
         // Set the start state to category selection
         SwitchState(new GMCategorySelectState());
     }
-
 
     private void Update()
     {

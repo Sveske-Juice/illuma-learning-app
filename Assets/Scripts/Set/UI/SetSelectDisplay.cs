@@ -16,7 +16,7 @@ public class SetSelectDisplay : DisplayMenuBase
         if (setState != null)
         {
             // If the new state is set select, then display the menu
-            Display(setState.Category);
+            Display(GameManager.Instance.Category);
         }
         else
         {

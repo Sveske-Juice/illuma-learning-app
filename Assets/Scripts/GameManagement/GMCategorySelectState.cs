@@ -33,7 +33,8 @@ public class GMCategorySelectState : GMBaseState
         string displayText = categoryContainer.Category.ToString();
         Debug.Log($"Selected category: {displayText}");
 
-        // Switch state to set select
-        GameManager.Instance.SwitchState(new GMSetSelect(categoryContainer.Category));
+        
+        GameManager.Instance.Category = categoryContainer.Category;
+        GameManager.Instance.CommandHandler.AddCommand(new GMStateCommand<GMSetSelect>());
     }
 }

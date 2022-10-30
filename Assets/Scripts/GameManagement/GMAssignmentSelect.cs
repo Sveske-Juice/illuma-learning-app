@@ -10,11 +10,6 @@ using UnityEngine;
 public class GMAssignmentSelect : GMBaseState
 {
     /* Members. */
-    private SetObject m_AssignmentSet;
-    public GMAssignmentSelect(SetObject set)
-    {
-        m_AssignmentSet = set;
-    }
 
     public override void Enter()
     {
@@ -33,12 +28,14 @@ public class GMAssignmentSelect : GMBaseState
     }
 
     /* Getters/Setters. */
-    public AssignmentBaseObject[] Assignments => m_AssignmentSet.Assignments;
+    public AssignmentBaseObject[] Assignments => GameManager.Instance.AssignmentSet.Assignments;
 
     private void OnAssignmentSelect(AssignmentBaseObject associatedAssignment)
     {
         Debug.Log($"Chose to train on assignment named: {associatedAssignment.Name}");
 
-        GameManager.Instance.SwitchState(new GMPlayingState(associatedAssignment));
+        // Switch state to playing state
+        GameManager.Instance.AssignmentContainer = associatedAssignment;
+        GameManager.Instance.CommandHandler.AddCommand(new GMStateCommand<GMPlayingState>());
     }
 }
