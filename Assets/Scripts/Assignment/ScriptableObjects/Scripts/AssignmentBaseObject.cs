@@ -1,10 +1,13 @@
 using UnityEngine;
+using System;
 
 public abstract class AssignmentBaseObject : ScriptableObject
 {
     /* Members. */
     [SerializeField] protected string m_AssignmentName;
     protected int m_AssignmentIdx;
+    public static Action OnIncorrectAnswer;
+    public static Action OnCorrectAnswer;
 
     /* Getters/Setters. */
     public string Name => m_AssignmentName;

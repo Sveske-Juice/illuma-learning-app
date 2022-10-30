@@ -7,28 +7,27 @@ using UnityEngine;
 public class IncorrectAnswerMenu : MonoBehaviour
 {
     [SerializeField] private GameObject m_Menu;
+    [SerializeField] private float m_ShowTime = 1.5f;
 
     private void OnEnable()
     {
-        Debug.LogWarning("Subbed");
-        AssignmentBaseBehaviour.OnIncorrectAnswer += ShowMenu;
+        AssignmentBaseObject.OnIncorrectAnswer += ShowMenu;
     }
 
     private void OnDisable()
     {
-        AssignmentBaseBehaviour.OnIncorrectAnswer -= ShowMenu;
+        AssignmentBaseObject.OnIncorrectAnswer -= ShowMenu;
     }
 
     private void ShowMenu()
     {
-        Debug.Log("SHowing menu");
         StartCoroutine(DisplayMenu());
     }
     private IEnumerator DisplayMenu()
     {
         
         m_Menu.SetActive(true);
-        yield return new WaitForSecondsRealtime(2f);
+        yield return new WaitForSecondsRealtime(m_ShowTime);
         m_Menu.SetActive(false);
     }
 }

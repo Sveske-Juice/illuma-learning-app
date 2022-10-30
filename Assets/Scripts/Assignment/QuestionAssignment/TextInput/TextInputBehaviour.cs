@@ -88,11 +88,11 @@ public class TextInputBehaviour : AssignmentBaseBehaviour<TextInputObject>
         {
             if (answer == m_Ctx.CorrectAnswers[i])
             {
-                OnCorrectAnswer?.Invoke();
+                AssignmentBaseObject.OnCorrectAnswer?.Invoke();
             }
             else
             {
-                OnIncorrectAnswer?.Invoke();
+                AssignmentBaseObject.OnIncorrectAnswer?.Invoke();
             }
 
         }
