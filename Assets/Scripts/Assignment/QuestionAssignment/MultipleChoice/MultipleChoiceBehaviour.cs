@@ -45,7 +45,11 @@ public class MultipleChoiceBehaviour : AssignmentBaseBehaviour<MultipleChoiceObj
         {
             if (choice == m_Ctx.CorrectAnswers[i])
             {
-                Debug.Log("CORRECT");
+                AssignmentBaseObject.OnCorrectAnswer?.Invoke();
+            }
+            else
+            {
+                AssignmentBaseObject.OnIncorrectAnswer?.Invoke();
             }
         }
     }

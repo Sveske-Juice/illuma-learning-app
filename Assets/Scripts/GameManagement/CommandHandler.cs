@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class CommandHandler
 {
-    public List<ICommand> m_Commands = new List<ICommand>();
+    /* Members. */
+    private List<ICommand> m_Commands = new List<ICommand>();
+
+    /* Getters/Setters. */
+    public int CommandLength => m_Commands.Count;
 
     /// <summary>
     /// Adds an ICommand to the list/stack of commands.

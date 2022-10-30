@@ -63,7 +63,6 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         // Set the start state to category selection
-        //SwitchState(new GMCategorySelectState());
         m_CommandHandler.AddCommand(new GMStateCommand<GMCategorySelectState>());
     }
 

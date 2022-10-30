@@ -25,4 +25,16 @@ public class GMPlayingState : GMBaseState
         // Play the assignment
         m_AssignmentBehaviour.Play();
     }
+
+    public override void Exit()
+    {
+        base.Exit();
+
+        // Delete assignment ui elements
+        int childrenCount = GameManager.Instance.AssignmentParent.transform.childCount;
+        for (int i = 0; i < childrenCount; i++)
+        {
+            GameObject.Destroy(GameManager.Instance.AssignmentParent.GetChild(i).gameObject);
+        }
+    }
 }

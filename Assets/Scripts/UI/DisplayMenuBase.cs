@@ -54,7 +54,7 @@ public abstract class DisplayMenuBase : MonoBehaviour
     {
         Debug.Log($"Hiding menu named: {Menu.name}");
 
-        // Delete all the category buttons
+        // Delete all the elements that was instantiated.
         int childrenCount = m_MenuParent.transform.childCount;
         for (int i = 0; i < childrenCount; i++)
         {
