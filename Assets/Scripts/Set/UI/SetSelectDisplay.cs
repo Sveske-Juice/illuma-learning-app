@@ -7,7 +7,6 @@ public class SetSelectDisplay : DisplayMenuBase
 {
     /* Members. */
     [SerializeField] private GameObject m_SetHolder;
-    [SerializeField] private GameObject m_SetContainer;
 
     protected override void OnGameStateChanged(GMBaseState state)
     {
@@ -49,20 +48,13 @@ public class SetSelectDisplay : DisplayMenuBase
 
             // Create set button as child of the container in the scroll view
             GameObject setBtn = GameObject.Instantiate( m_SetHolder, Vector3.zero, 
-                                    Quaternion.identity, m_SetContainer.transform);
+                                    Quaternion.identity, m_MenuParent.transform);
 
             // Load the new button with the assignment set data container (sets display text etc.)
             setBtn.GetComponentInChildren<SetButton>().Load(set);
         }
 
         base.Display();
-    }
-
-    protected override void Hide()
-    {
-        // TODO remove content
-
-        base.Hide();
     }
 
     /// <summary>

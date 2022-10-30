@@ -10,7 +10,7 @@ using UnityEngine;
 public class CategoryMenuDisplay : DisplayMenuBase
 {
     [SerializeField] private GameObject m_CategoryHolder;
-    [SerializeField] private GameObject m_CategoryContainer;
+
     protected override void OnGameStateChanged(GMBaseState state)
     {
         if (state is GMCategorySelectState)
@@ -32,24 +32,12 @@ public class CategoryMenuDisplay : DisplayMenuBase
 
             // Create category button as child of the container in the scroll view
             GameObject categoryBtn = GameObject.Instantiate( m_CategoryHolder, Vector3.zero, 
-                                    Quaternion.identity, m_CategoryContainer.transform);
+                                    Quaternion.identity, m_MenuParent.transform);
 
             // Load the new button with the category data container (sets display text etc.)
             categoryBtn.GetComponentInChildren<CategoryButton>().Load(categoryContainer);
         }
 
         base.Display();
-    }
-
-    protected override void Hide()
-    {
-        // Delete all the category buttons
-        int childrenCount = m_CategoryContainer.transform.childCount;
-        for (int i = 0; i < childrenCount; i++)
-        {
-            GameObject.Destroy(m_CategoryContainer.transform.GetChild(i).gameObject);
-        }
-
-        base.Hide();
     }
 }

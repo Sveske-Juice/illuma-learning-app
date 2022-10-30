@@ -34,9 +34,4 @@ public class AssignmentSelectDisplay : DisplayMenuBase
 
         base.Display();
     }
-
-    protected override void Hide()
-    {
-        base.Hide();
-    }
 }

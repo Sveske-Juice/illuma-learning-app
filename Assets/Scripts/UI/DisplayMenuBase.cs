@@ -12,6 +12,7 @@ public abstract class DisplayMenuBase : MonoBehaviour
 {
     /* Members. */
     [SerializeField] private GameObject m_Menu;
+    [SerializeField] protected GameObject m_MenuParent;
 
     /* Getters/Setters. */
     protected GameObject Menu { get { return m_Menu; } set { m_Menu = value; } }
@@ -52,6 +53,13 @@ public abstract class DisplayMenuBase : MonoBehaviour
     protected virtual void Hide()
     {
         Debug.Log($"Hiding menu named: {Menu.name}");
+
+        // Delete all the category buttons
+        int childrenCount = m_MenuParent.transform.childCount;
+        for (int i = 0; i < childrenCount; i++)
+        {
+            GameObject.Destroy(m_MenuParent.transform.GetChild(i).gameObject);
+        }
 
         // Hide menu
         Menu.SetActive(false);
