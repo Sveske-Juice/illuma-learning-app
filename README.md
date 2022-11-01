@@ -34,6 +34,9 @@ The user should then chose the answer that they think is correct.
 <br>
 <br>
 
+# General Notes
+The app was designed and tested on the samsung galaxy s9, so might not work on phones with different aspect rasios etc.
+
 # Tools used
 This project was made with the game engine framework Unity.
 
