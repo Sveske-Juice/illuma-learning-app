@@ -31,6 +31,10 @@ In this assignment the user has to input the answer to the question in a text fi
 In this assignment the user gets a list of possible answers to the question.
 The user should then chose the answer that they think is correct.
 
+# Install
+To test the app we've provided a .apk file in the releases github section. 
+We are only building for Android.
+
 <br>
 
 # General Notes
