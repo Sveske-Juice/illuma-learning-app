@@ -32,10 +32,9 @@ In this assignment the user gets a list of possible answers to the question.
 The user should then chose the answer that they think is correct.
 
 <br>
-<br>
 
 # General Notes
-The app was designed and tested on the samsung galaxy s9, so might not work on phones with different aspect rasios etc.
+The app was designed and tested on the samsung galaxy s9, so might not work on phones with different aspect ratios etc.
 
 # Tools used
 This project was made with the game engine framework Unity.
@@ -43,9 +42,9 @@ This project was made with the game engine framework Unity.
 <br>
 
 # License
-All code in this repository is licensed with the MIT License. Some assets as fonts and icons do not.
+All code in this repository is licensed under the MIT License. Images, fonts and other assets are not licensed under MIT.
 
 <br>
 
 ## Disclaimer
-This is a school project and won't be maintained nor updated. This app is a prototype for a game which was designed to help increase the youths academic skills, so it might not work as expected.Also be aware that the code is a bit messy if you dare to look at it (:
+This is a school project and won't be maintained nor updated. This app is a prototype for a game which was designed to help increase the youths academic skills, so it might not work as expected. Also be aware that the code is a bit messy if you dare to look at it (:
