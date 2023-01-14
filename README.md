@@ -1,5 +1,5 @@
 # illuma-learning-app
-An educational game to help Kenya's youth increase their academic skills 
+An educational "game"
 
 # Pictures
 ## Category selection menu
@@ -51,4 +51,4 @@ All code in this repository is licensed under the MIT License. Images, fonts and
 <br>
 
 ## Disclaimer
-This is a school project and won't be maintained nor updated. This app is a prototype for a game which was designed to help increase the youths academic skills, so it might not work as expected. Also be aware that the code is a bit messy if you dare to look at it (:
+This is a school project and won't be maintained nor updated. This app is a prototype.
